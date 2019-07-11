@@ -7,9 +7,15 @@
 
 #include "main.h"
 
-int main()
+int 		main(int argc, char **argv)
 {
-    
-    ft_putendl("ok");
-    
+	
+	t_frc	*frc;
+	
+	if (!(frc = p_frc()))
+		exit(0);
+	
+	mlx_loop(frc->mlx);
+	
+	return (0);
 }

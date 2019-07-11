@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                            :+:+:       :+:       #
-#                                                     +:+ +:+         +:+      #
-#    By: glormell <glormell@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/11/27 20:08:21 by glormell          #+#    #+#              #
-#    Updated: 2019/07/10 21:53:04 by nickaroot      ####       ####.me         #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = fractol
 
 MAKE = make
@@ -17,7 +5,16 @@ CC = gcc
 COPT = 
 CFLAGS = #-Wall -Wextra -Werror
 
-CFILES = src/main.c
+CFILES = src/core/core.c \
+	src/core/core_point.c \
+	src/core/core_window.c \
+	src/core/core_canvas.c \
+	src/core/core_error.c \
+	src/hook/hook.c \
+	src/hook/keys/hook_close.c \
+	src/hook/keys/hook_keys.c \
+	src/hook/mouse/hook_mouse.c \
+	src/main.c
 OFILES = $(CFILES:%.c=%.o)
 
 LIBPATH = libs/

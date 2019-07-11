@@ -18,6 +18,6 @@ typedef struct	s_frc
 	int			(*mandelbrot)(struct s_frc *);
 	int			(*julia)(struct s_frc *);
 	int			(*burningship)(struct s_frc *);
-}
+}				t_frc;
 
 #endif
