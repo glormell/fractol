@@ -10,6 +10,8 @@ CFILES = src/core/core.c \
 	src/core/core_window.c \
 	src/core/core_canvas.c \
 	src/core/core_error.c \
+	src/draw/draw.c \
+	src/draw/draw_mandelbrot.c \
 	src/hook/hook.c \
 	src/hook/keys/hook_close.c \
 	src/hook/keys/hook_keys.c \

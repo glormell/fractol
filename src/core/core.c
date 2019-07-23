@@ -16,7 +16,10 @@ t_frc		*p_frc()
 		return (0);
 	
 	if ((!(frc->mlx = mlx_init())) ||
-		(!(win_init(frc, WIN_WIDTH, WIN_HEIGHT, WIN_TITLE))))
+		(!(win_init(frc, WIN_WIDTH, WIN_HEIGHT, WIN_TITLE))) ||
+		(!(hook_init(frc))) ||
+		(!(draw_init(frc))) ||
+		(!(canvas_init(frc))))
 		exit(0);
 	
 	return (frc);

@@ -35,6 +35,10 @@
 		85107F8222D76C4000CBA363 /* core_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_error.h; sourceTree = "<group>"; };
 		85107F8322D76CAC00CBA363 /* core_canvas.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = core_canvas.c; sourceTree = "<group>"; };
 		85107F8422D76CAC00CBA363 /* core_canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_canvas.h; sourceTree = "<group>"; };
+		8570E51822E78AC1006DF344 /* draw_mandelbrot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_mandelbrot.c; sourceTree = "<group>"; };
+		8570E51922E78AC1006DF344 /* draw_mandelbrot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_mandelbrot.h; sourceTree = "<group>"; };
+		8570E51A22E78E16006DF344 /* draw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw.c; sourceTree = "<group>"; };
+		8570E51B22E78E16006DF344 /* draw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
 		85F69E7422D66FFA00AB1DAF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		85F69E7522D66FFA00AB1DAF /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		85F69E7822D6729400AB1DAF /* author */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = author; sourceTree = "<group>"; };
@@ -126,6 +130,24 @@
 			path = color;
 			sourceTree = "<group>";
 		};
+		8570E51622E7879C006DF344 /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				8570E51A22E78E16006DF344 /* draw.c */,
+				8570E51822E78AC1006DF344 /* draw_mandelbrot.c */,
+			);
+			path = draw;
+			sourceTree = "<group>";
+		};
+		8570E51722E787B8006DF344 /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				8570E51B22E78E16006DF344 /* draw.h */,
+				8570E51922E78AC1006DF344 /* draw_mandelbrot.h */,
+			);
+			path = draw;
+			sourceTree = "<group>";
+		};
 		85F69E6822D66F8700AB1DAF = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +163,7 @@
 			children = (
 				85F69E7422D66FFA00AB1DAF /* main.c */,
 				85F69E7E22D67B7500AB1DAF /* core */,
+				8570E51622E7879C006DF344 /* draw */,
 				85107F6122D7600B00CBA363 /* hook */,
 			);
 			path = src;
@@ -151,6 +174,7 @@
 			children = (
 				85F69E7522D66FFA00AB1DAF /* main.h */,
 				85F69E7F22D67B8B00AB1DAF /* core */,
+				8570E51722E787B8006DF344 /* draw */,
 				85107F6222D7601800CBA363 /* hook */,
 				85F69E8322D6839D00AB1DAF /* constants.h */,
 				85107F7D22D766B200CBA363 /* color */,
