@@ -13,4 +13,5 @@
 # define CANVAS_WF	0.5
 # define CANVAS_HF	0.5
 # define ENDIAN		0
+# define THREADS    1024
 #endif

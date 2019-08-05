@@ -8,16 +8,14 @@
 #ifndef T_FRC_H
 # define T_FRC_H
 # include "core/t_canvas.h"
+# include "core/t_mandelbrot.h"
 
 typedef struct	s_frc
 {
 	void		*mlx;
 	void		*win;
-	t_canvas	cvs;
 	t_point2	mouse;
-	int			(*mandelbrot)(struct s_frc *);
-	int			(*julia)(struct s_frc *);
-	int			(*burningship)(struct s_frc *);
+  t_mandelbrot  mb;
 }				t_frc;
 
 #endif

@@ -13,6 +13,7 @@
 # include "core/t_frc.h"
 # include "core/core_window.h"
 # include "core/core_canvas.h"
+# include "hook/hook.h"
 # include "draw/draw.h"
 
 t_frc	*p_frc();

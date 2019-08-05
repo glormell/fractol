@@ -39,3 +39,8 @@ t_point2		point2(int x, int y)
 {
 	return (t_point2){ x, y };
 }
+
+t_point2d   point2d(double x, double y)
+{
+  return (t_point2d){ x, y };
+}

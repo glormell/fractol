@@ -17,7 +17,8 @@ int			close_hook(void *param)
 	t_frc	*frc;
 	
 	frc = (t_frc *)param;
-	mlx_destroy_image(frc->mlx, frc->cvs.img);
+  if (frc->mb.img)
+    mlx_destroy_image(frc->mlx, frc->mb.img);
 	free(frc->mlx);
 	free(frc->win);
 	free(frc);

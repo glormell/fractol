@@ -7,6 +7,7 @@ CFLAGS = #-Wall -Wextra -Werror
 
 CFILES = src/core/core.c \
 	src/core/core_point.c \
+  src/core/core_complex.c \
 	src/core/core_window.c \
 	src/core/core_canvas.c \
 	src/core/core_error.c \

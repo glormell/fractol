@@ -9,28 +9,27 @@
 
 int					clear_canvas(t_frc *frc)
 {
-	int				*canvas_data;
-	int				bits;
-	int				len;
-	
-	if (!(frc->cvs.img))
-		frc->cvs.img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
-	canvas_data = (int *)mlx_get_data_addr(frc->cvs.img, &bits,
-										   &len, &len);
-	len = WIN_WIDTH * WIN_HEIGHT * (bits / 32);
-	while (--len)
-	{
-		canvas_data[len] = 0; //frc->appearance.bg.raw;
-	}
+//	int				*canvas_data;
+//	int				bits;
+//	int				len;
+//
+//	if (!(frc->cvs.img))
+//		frc->cvs.img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
+//	canvas_data = (int *)mlx_get_data_addr(frc->cvs.img, &bits,
+//										   &len, &len);
+//	len = WIN_WIDTH * WIN_HEIGHT * (bits / 32);
+//	while (--len)
+//	{
+//		canvas_data[len] = 0;
+//	}
 	return (1);
 }
 
 int					canvas_init(t_frc *frc)
 {
-	frc->cvs.s = point2(WIN_WIDTH * CANVAS_WF, WIN_HEIGHT * CANVAS_HF);
-	frc->cvs.changed = 1;
-	clear_canvas(frc);
-	draw_mandelbrot(frc);
-	mlx_put_image_to_window(frc->mlx, frc->win, frc->cvs.img, 0, 0);
+//	frc->cvs.s = point2(WIN_WIDTH, WIN_HEIGHT);
+//	frc->cvs.changed = 1;
+//	clear_canvas(frc);
+//	
 	return (1);
 }
