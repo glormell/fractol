@@ -38,6 +38,8 @@
 		8570E51922E78AC1006DF344 /* draw_mandelbrot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_mandelbrot.h; sourceTree = "<group>"; };
 		8570E51A22E78E16006DF344 /* draw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw.c; sourceTree = "<group>"; };
 		8570E51B22E78E16006DF344 /* draw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
+		857C611622F8CA08005F0869 /* draw_helpers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_helpers.c; sourceTree = "<group>"; };
+		857C611722F8CA08005F0869 /* draw_helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_helpers.h; sourceTree = "<group>"; };
 		85F69E7422D66FFA00AB1DAF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		85F69E7522D66FFA00AB1DAF /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		85F69E7822D6729400AB1DAF /* author */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = author; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8570E51A22E78E16006DF344 /* draw.c */,
+				857C611622F8CA08005F0869 /* draw_helpers.c */,
 				8570E51822E78AC1006DF344 /* draw_mandelbrot.c */,
 			);
 			path = draw;
@@ -137,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				8570E51B22E78E16006DF344 /* draw.h */,
+				857C611722F8CA08005F0869 /* draw_helpers.h */,
 				8570E51922E78AC1006DF344 /* draw_mandelbrot.h */,
 			);
 			path = draw;

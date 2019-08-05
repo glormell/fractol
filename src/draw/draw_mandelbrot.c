@@ -7,22 +7,6 @@
 
 #include "draw/draw_mandelbrot.h"
 
-void				put_pixel(t_frc *frc, int x, int y, int c)
-{
-	char			*canvas_data;
-	int				bits;
-	int				pos;
-	unsigned int	color;
-	
-	if (!(frc->mb.img))
-		frc->mb.img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
-	canvas_data = mlx_get_data_addr(frc->mb.img, &bits,
-										   &pos, &pos);
-	color = mlx_get_color_value(frc->mlx, c);
-	pos = WIN_WIDTH * (bits / 8) * y + x * (bits / 8);
-	*((unsigned int *)(canvas_data + pos)) = color;
-}
-
 static void   mandelbrot_iterator(t_frc *frc, t_complex p, t_point2 c)
 {
   t_complex   o;
@@ -39,7 +23,10 @@ static void   mandelbrot_iterator(t_frc *frc, t_complex p, t_point2 c)
                 2 * o.r * o.i + p.i);
     ++i;
   }
-  i == frc->mb.i ? put_pixel(frc, c.x, c.y, 0x000000) : put_pixel(frc, c.x, c.y, frc->mb.c * i);
+	if (i == frc->mb.i)
+		put_pixel(frc->mlx, frc->mb.img, c, 0x000000);
+	else
+		put_pixel(frc, frc->mb.img, c, frc->mb.c * i);
 }
 
 static void		mandelbrot_worker(t_mb_worker *w)

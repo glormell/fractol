@@ -1,10 +1,3 @@
-//
-//  draw_mandelbrot.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 23/07/2019.
-//
-
 #ifndef DRAW_MANDELBROT_H
 # define DRAW_MANDELBROT_H
 # include <pthread.h>
@@ -13,6 +6,7 @@
 # include "core/t_frc.h"
 # include "core/core_point.h"
 # include "core/core_complex.h"
+# include "draw/draw_helpers.h"
 
 typedef struct  s_mb_worker
 {
@@ -22,4 +16,5 @@ typedef struct  s_mb_worker
 }        t_mb_worker;
 
 int		draw_mandelbrot(t_frc *frc);
+
 #endif
