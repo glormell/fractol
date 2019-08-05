@@ -14,9 +14,7 @@ typedef struct	s_canvas
 	void		*img;
 	t_point3	t;
 	t_point3	r;
-	float		w;
-	float		h;
-	float		zscale;
+  t_point2  s;
 	int			changed;
 }				t_canvas;
 

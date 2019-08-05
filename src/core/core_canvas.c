@@ -27,30 +27,10 @@ int					clear_canvas(t_frc *frc)
 
 int					canvas_init(t_frc *frc)
 {
-	t_point3		t;
-	t_point2		s;
-	
-	s = point2(WIN_WIDTH, WIN_HEIGHT);
-//	t = point3((s.x - (frc->map->width - 1) * (s.x * CANVAS_WF) /
-//				(((frc->map->width > frc->map->height) ? frc->map->width :
-//				  frc->map->height) - 1)) / 2, (s.y - (frc->map->height - 1) *
-//												(s.y * CANVAS_HF) / (((frc->map->width > frc->map->height) ?
-//																	  frc->map->width : frc->map->height) - 1)) / 2, (s.y * CANVAS_WF) /
-//			   (((frc->map->width > frc->map->height) ? frc->map->width :
-//				 frc->map->height) - 1));
-	frc->cvs.t = t;
-	frc->cvs.r = point3(0, 0, 0);
-	frc->cvs.zscale = 1;
-	frc->cvs.w = WIN_WIDTH * CANVAS_WF;
-	frc->cvs.h = WIN_HEIGHT * CANVAS_HF;
-//	frc->cvs.w = (frc->map->width >= frc->map->height) ? frc->cvs.w
-//	: ((float)frc->map->width / frc->map->height) * frc->cvs.h;
-//	frc->cvs.h = (frc->map->width <= frc->map->height) ? frc->cvs.h
-//	: ((float)frc->map->height / frc->map->width) * frc->cvs.w;
-	frc->cvs.zscale = 1;
+	frc->cvs.s = point2(WIN_WIDTH * CANVAS_WF, WIN_HEIGHT * CANVAS_HF);
 	frc->cvs.changed = 1;
 	clear_canvas(frc);
-	frc->mandelbrot(frc);
+	draw_mandelbrot(frc);
 	mlx_put_image_to_window(frc->mlx, frc->win, frc->cvs.img, 0, 0);
 	return (1);
 }

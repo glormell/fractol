@@ -7,7 +7,7 @@
 
 #include "core/core_point.h"
 
-t_point3		*p_point3(int x, int y, int z)
+t_point3		*p_point3(double x, double y, double z)
 {
 	t_point3	*point;
 	
@@ -19,7 +19,7 @@ t_point3		*p_point3(int x, int y, int z)
 	return (point);
 }
 
-t_point3		point3(int x, int y, int z)
+t_point3		point3(double x, double y, double z)
 {
 	return (t_point3){ x, y, z };
 }
@@ -38,9 +38,4 @@ t_point2		*p_point2(int x, int y)
 t_point2		point2(int x, int y)
 {
 	return (t_point2){ x, y };
-}
-
-t_point2c		point2c(int x, int y, t_color c)
-{
-	return (t_point2c){ x, y, c };
 }

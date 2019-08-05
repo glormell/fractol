@@ -28,7 +28,6 @@
 		85107F7A22D7645300CBA363 /* special_codes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = special_codes.h; sourceTree = "<group>"; };
 		85107F7B22D7646500CBA363 /* xmask_codes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xmask_codes.h; sourceTree = "<group>"; };
 		85107F7C22D7666800CBA363 /* core_point.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_point.h; sourceTree = "<group>"; };
-		85107F7E22D766BE00CBA363 /* t_color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_color.h; sourceTree = "<group>"; };
 		85107F7F22D7675600CBA363 /* core_point.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = core_point.c; sourceTree = "<group>"; };
 		85107F8022D76B1B00CBA363 /* t_canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_canvas.h; sourceTree = "<group>"; };
 		85107F8122D76C4000CBA363 /* core_error.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = core_error.c; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		85F69E8122D67C5600AB1DAF /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		85F69E8222D67E5000AB1DAF /* t_frc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_frc.h; sourceTree = "<group>"; };
 		85F69E8322D6839D00AB1DAF /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		C392109522F7BF0B00A0B0B8 /* t_mandelbrot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_mandelbrot.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -122,14 +122,6 @@
 			path = codes;
 			sourceTree = "<group>";
 		};
-		85107F7D22D766B200CBA363 /* color */ = {
-			isa = PBXGroup;
-			children = (
-				85107F7E22D766BE00CBA363 /* t_color.h */,
-			);
-			path = color;
-			sourceTree = "<group>";
-		};
 		8570E51622E7879C006DF344 /* draw */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +169,6 @@
 				8570E51722E787B8006DF344 /* draw */,
 				85107F6222D7601800CBA363 /* hook */,
 				85F69E8322D6839D00AB1DAF /* constants.h */,
-				85107F7D22D766B200CBA363 /* color */,
 			);
 			path = includes;
 			sourceTree = "<group>";
@@ -204,6 +195,7 @@
 				85107F8222D76C4000CBA363 /* core_error.h */,
 				85F69E8222D67E5000AB1DAF /* t_frc.h */,
 				85107F8022D76B1B00CBA363 /* t_canvas.h */,
+				C392109522F7BF0B00A0B0B8 /* t_mandelbrot.h */,
 			);
 			path = core;
 			sourceTree = "<group>";

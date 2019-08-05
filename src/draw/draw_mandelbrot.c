@@ -7,83 +7,6 @@
 
 #include "draw/draw_mandelbrot.h"
 
-int			raw_color(unsigned char r, unsigned char g,
-					  unsigned char b, unsigned char a)
-{
-	(void)a;
-	return ((r << 16) + (g << 8) + b);
-}
-
-int HSVToRGB(double h, double s, double v) {
-	unsigned char r = 0, g = 0, b = 0;
-	
-	if (s == 0)
-	{
-		r = v;
-		g = v;
-		b = v;
-	}
-	else
-	{
-		int i;
-		double f, p, q, t;
-		
-		if (h == 360)
-			h = 0;
-		else
-			h = h / 60;
-		
-		i = (int)trunc(h);
-		f = h - i;
-		
-		p = v * (1.0 - s);
-		q = v * (1.0 - (s * f));
-		t = v * (1.0 - (s * (1.0 - f)));
-		
-		switch (i)
-		{
-			case 0:
-				r = v;
-				g = t;
-				b = p;
-				break;
-				
-			case 1:
-				r = q;
-				g = v;
-				b = p;
-				break;
-				
-			case 2:
-				r = p;
-				g = v;
-				b = t;
-				break;
-				
-			case 3:
-				r = p;
-				g = q;
-				b = v;
-				break;
-				
-			case 4:
-				r = t;
-				g = p;
-				b = v;
-				break;
-				
-			default:
-				r = v;
-				g = p;
-				b = q;
-				break;
-		}
-		
-	}
-	
-	return raw_color(r, g, b, 1);
-}
-
 void				put_pixel(t_frc *frc, int x, int y, int c)
 {
 	char			*canvas_data;
@@ -130,11 +53,7 @@ int		draw_mandelbrot(t_frc *frc)
 				//if the point is outside the circle with radius 2: stop
 				if((newRe * newRe + newIm * newIm) > 4) break;
 			}
-			//use color model conversion to get rainbow palette, make brightness black if maxIterations reached
-			color = HSVToRGB(i % 256, 255, 255 * (i < maxIterations));
-			//draw the pixel
-			//pset(x, y, color);
-			put_pixel(frc, x, y, color);
+			put_pixel(frc, x, y, 0x010000 * i);
 			
 		}
 	return (0);

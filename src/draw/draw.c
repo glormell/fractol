@@ -9,5 +9,5 @@
 
 int		draw_init(t_frc *frc)
 {
-	frc->mandelbrot = &draw_mandelbrot;
+	//frc->mandelbrot = &draw_mandelbrot;
 }
