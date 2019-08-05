@@ -7,22 +7,6 @@
 
 #include "draw/draw_mandelbrot.h"
 
-static int          clear(t_frc *frc)
-{
-  int        *canvas_data;
-  int        bits;
-  int        len;
-  
-  if (!(frc->mb.img))
-    frc->mb.img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
-  canvas_data = (int *)mlx_get_data_addr(frc->mb.img, &bits,
-                                         &len, &len);
-  len = WIN_WIDTH * WIN_HEIGHT * (bits / 32);
-  while (--len)
-    canvas_data[len] = 0;
-  return (1);
-}
-
 void				put_pixel(t_frc *frc, int x, int y, int c)
 {
 	char			*canvas_data;
@@ -32,7 +16,8 @@ void				put_pixel(t_frc *frc, int x, int y, int c)
 	
 	if (!(frc->mb.img))
 		frc->mb.img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
-	canvas_data = mlx_get_data_addr(frc->mb.img, &bits, &pos, &pos);
+	canvas_data = mlx_get_data_addr(frc->mb.img, &bits,
+										   &pos, &pos);
 	color = mlx_get_color_value(frc->mlx, c);
 	pos = WIN_WIDTH * (bits / 8) * y + x * (bits / 8);
 	*((unsigned int *)(canvas_data + pos)) = color;
@@ -68,9 +53,11 @@ static void		mandelbrot_worker(t_mb_worker *w)
     c.x = w->from.x;
     while (c.x < w->to.x)
     {
-      p = complex(1.5 * (c.x - WIN_WIDTH / 2) / (0.5 * w->frc->mb.t.z * WIN_WIDTH) + w->frc->mb.t.x,
-                  (c.y - WIN_HEIGHT / 2) / (0.5 * w->frc->mb.t.z * WIN_HEIGHT) + w->frc->mb.t.y);
-      mandelbrot_iterator(w->frc, p, c);
+		p = complex(c.x / (WIN_WIDTH / (w->frc->mb.max.r - w->frc->mb.min.r)) + w->frc->mb.min.r + w->frc->mb.t.x,
+					c.y / (WIN_HEIGHT / (w->frc->mb.max.i - w->frc->mb.min.i)) + w->frc->mb.min.i + w->frc->mb.t.y);
+//		p = complex(1.5 * (c.x - WIN_WIDTH / 2) / (0.5 * w->frc->mb.t.z * WIN_WIDTH) + w->frc->mb.t.x,
+//					(c.y - WIN_HEIGHT / 2) / (0.5 * w->frc->mb.t.z * WIN_HEIGHT) + w->frc->mb.t.y);
+		mandelbrot_iterator(w->frc, p, c);
       ++c.x;
     }
     ++c.y;
@@ -85,14 +72,15 @@ int draw_mandelbrot(t_frc *frc)
   t_point2d    f;
   t_point2d    t;
   int         i;
-  
+	
   i = -1;
+	frc->mb.t = point3(0, 0, 1.5);
   while (++i < THREADS)
   {
-    f = point2d(0, i * WIN_HEIGHT / THREADS);
-    t = point2d(WIN_WIDTH, (i + 1) * WIN_HEIGHT / THREADS);
+    f = point2d(0, 0);
+    t = point2d(WIN_WIDTH, WIN_HEIGHT);
     w[i] = (t_mb_worker){frc, f, t};
-    pthread_create(&p[i], NULL, mandelbrot_worker, (void*)&w[i]);
+    pthread_create((p + i), NULL, mandelbrot_worker, (void *)(w + i));
   }
   while (i--)
     pthread_join(p[i], NULL);

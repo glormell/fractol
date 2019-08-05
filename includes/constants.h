@@ -7,11 +7,9 @@
 
 #ifndef CONSTANTS_H
 # define CONSTANTS_H
-# define WIN_WIDTH	1000
-# define WIN_HEIGHT	1000
+# define WIN_WIDTH	1280
+# define WIN_HEIGHT	720
 # define WIN_TITLE	"Fractol"
-# define CANVAS_WF	0.5
-# define CANVAS_HF	0.5
 # define ENDIAN		0
-# define THREADS    1024
+# define THREADS    4
 #endif

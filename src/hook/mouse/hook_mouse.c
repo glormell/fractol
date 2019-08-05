@@ -11,16 +11,16 @@ t_point2		canvas_mouse(t_frc *frc)
 {
 	t_point2	c;
 	
-	c.x = frc->mouse.x - frc->cvs.t.x;
-	if (frc->mouse.x < frc->cvs.t.x)
-		c.x = 0;
-	if (frc->mouse.x > frc->cvs.t.x + frc->cvs.w)
-		c.x = frc->cvs.t.x + frc->cvs.w;
-	c.y = frc->mouse.y - frc->cvs.t.y;
-	if (frc->mouse.y < frc->cvs.t.y)
-		c.y = 0;
-	if (frc->mouse.y > frc->cvs.t.y + frc->cvs.h)
-		c.y = frc->cvs.t.y + frc->cvs.h;
+//	c.x = frc->mouse.x - frc->cvs.t.x;
+//	if (frc->mouse.x < frc->cvs.t.x)
+//		c.x = 0;
+//	if (frc->mouse.x > frc->cvs.t.x + frc->cvs.w)
+//		c.x = frc->cvs.t.x + frc->cvs.w;
+//	c.y = frc->mouse.y - frc->cvs.t.y;
+//	if (frc->mouse.y < frc->cvs.t.y)
+//		c.y = 0;
+//	if (frc->mouse.y > frc->cvs.t.y + frc->cvs.h)
+//		c.y = frc->cvs.t.y + frc->cvs.h;
 	return (c);
 }
 
