@@ -1,10 +1,3 @@
-//
-//  t_point.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef CORE_POINT_H
 # define CORE_POINT_H
 # include "libft.h"

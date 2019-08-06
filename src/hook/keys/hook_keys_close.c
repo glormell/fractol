@@ -1,18 +1,11 @@
-//
-//  hook_close.c
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
+#include "hook/keys/hook_keys_close.h"
 
-#include "hook/keys/hook_close.h"
-
-int			is_close(int key)
+int			is_keys_close(int key)
 {
 	return (key == K_ESC || key == K_Q);
 }
 
-int			close_hook(t_frc *frc)
+int			close_keys_hook(t_frc *frc)
 {
   if (frc->mb.cvs.img)
     mlx_destroy_image(frc->mlx, frc->mb.cvs.img);

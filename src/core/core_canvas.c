@@ -1,10 +1,3 @@
-//
-//  core_canvas.c
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #include "core/core_canvas.h"
 
 int					clear_canvas(t_frc *frc)

@@ -1,10 +1,3 @@
-//
-//  core.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 10/07/2019.
-//
-
 #ifndef CORE_H
 # define CORE_H
 # include "mlx.h"

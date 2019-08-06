@@ -1,5 +1,21 @@
 #include "draw/draw_helpers.h"
 
+int	clear(t_frc *frc)
+{
+	int		*canvas_data;
+	int		bits;
+	int		len;
+	
+	if (!(frc->cvs->img))
+		frc->cvs->img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
+	canvas_data = (int *)mlx_get_data_addr(frc->cvs->img, &bits,
+										   &len, &len);
+	len = WIN_WIDTH * WIN_HEIGHT * (bits / 32);
+	while (--len)
+		canvas_data[len] = 0;
+	return (1);
+}
+
 void				put_pixel(t_frc *frc, t_point2 p, int c)
 {
 	char			*canvas_data;
@@ -24,7 +40,7 @@ void				apply_zoom(t_frc *frc, t_complex m, double zoom)
 {
 	zoom = 1.0 / zoom;
 	frc->cvs->min = complex(inter(m.r, frc->cvs->min.r, zoom),
-					   inter(m.i, frc->cvs->min.i, zoom));
+							inter(m.i, frc->cvs->min.i, zoom));
 	frc->cvs->max = complex(inter(m.r, frc->cvs->max.r, zoom),
-					   inter(m.i, frc->cvs->max.i, zoom));
+							inter(m.i, frc->cvs->max.i, zoom));
 }

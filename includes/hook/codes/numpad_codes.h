@@ -1,10 +1,3 @@
-//
-//  numpad_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef NUMPAD_CODES_H
 # define NUMPAD_CODES_H
 # define K_NP_CLR	71

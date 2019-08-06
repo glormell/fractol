@@ -1,10 +1,3 @@
-//
-//  letter_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef LETTER_CODES_H
 # define LETTER_CODES_H
 # define K_Q		12

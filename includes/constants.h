@@ -1,10 +1,3 @@
-//
-//  constants.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 10/07/2019.
-//
-
 #ifndef CONSTANTS_H
 # define CONSTANTS_H
 # define WIN_WIDTH	1280

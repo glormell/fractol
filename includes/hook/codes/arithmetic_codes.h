@@ -1,10 +1,3 @@
-//
-//  arithmetic_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef ARITHMETIC_CODES_H
 # define ARITHMETIC_CODES_H
 # define K_BQT			50

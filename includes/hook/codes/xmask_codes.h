@@ -1,10 +1,3 @@
-//
-//  xmask_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef XMASK_CODES_H
 # define XMASK_CODES_H
 # define XM_KPRESS	(1L << 0)

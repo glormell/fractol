@@ -1,5 +1,5 @@
-#ifndef DRAW_MANDELBROT_H
-# define DRAW_MANDELBROT_H
+#ifndef DRAW_JULIA_H
+# define DRAW_JULIA_H
 # include <pthread.h>
 # include "mlx.h"
 # include "constants.h"
@@ -8,13 +8,13 @@
 # include "core/core_complex.h"
 # include "draw/draw_helpers.h"
 
-typedef struct	s_mb_worker
+typedef struct	s_jl_worker
 {
 	t_frc		*frc;
 	t_point2d	from;
 	t_point2d	to;
-}				t_mb_worker;
+}				t_jl_worker;
 
-int		draw_mandelbrot(t_frc *frc);
+int		draw_julia(t_frc *frc);
 
 #endif

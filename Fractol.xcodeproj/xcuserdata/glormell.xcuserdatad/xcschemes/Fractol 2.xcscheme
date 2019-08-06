@@ -71,6 +71,24 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "make fclean">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "85F69E6F22D66FB000AB1DAF"
+                     BuildableName = "Fractol"
+                     BlueprintName = "Fractol"
+                     ReferencedContainer = "container:Fractol.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <PathRunnable
          runnableDebuggingMode = "0"
          FilePath = "/Users/glormell/Desktop/Fractol/fractol">

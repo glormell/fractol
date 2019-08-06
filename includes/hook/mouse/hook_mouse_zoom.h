@@ -6,7 +6,7 @@
 # include "hook/codes/mouse_codes.h"
 # include "draw/draw_helpers.h"
 
-int				is_zoom(int button);
-int				hook_zoom(int button, t_point2d p, t_frc *frc);
+int				is_mouse_zoom(int button);
+int				zoom_mouse_hook(int button, t_point2d p, t_frc *frc);
 
 #endif

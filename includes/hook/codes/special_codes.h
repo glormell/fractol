@@ -1,10 +1,3 @@
-//
-//  special_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef SPECIAL_CODES_H
 # define SPECIAL_CODES_H
 # define K_ESC		53

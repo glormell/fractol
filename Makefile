@@ -7,18 +7,19 @@ CFLAGS = -Wall -Wextra -Werror
 
 CFILES = src/core/core.c \
 	src/core/core_point.c \
-  src/core/core_complex.c \
+	src/core/core_complex.c \
 	src/core/core_window.c \
 	src/core/core_error.c \
 	src/draw/draw.c \
 	src/draw/draw_helpers.c \
 	src/draw/draw_mandelbrot.c \
+	src/draw/draw_julia.c \
 	src/hook/hook.c \
-	src/hook/keys/hook_close.c \
-  src/hook/keys/hook_move.c \
+	src/hook/keys/hook_keys_close.c \
+	src/hook/keys/hook_keys_move.c \
 	src/hook/keys/hook_keys.c \
 	src/hook/mouse/hook_mouse.c \
-	src/hook/mouse/hook_zoom.c \
+	src/hook/mouse/hook_mouse_zoom.c \
 	src/main.c
 OFILES = $(CFILES:%.c=%.o)
 

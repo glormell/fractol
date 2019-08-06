@@ -1,10 +1,3 @@
-//
-//  mouse_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef MOUSE_CODES_H
 # define MOUSE_CODES_H
 # define M_LEFT			1

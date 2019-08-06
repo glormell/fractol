@@ -1,10 +1,3 @@
-//
-//  core_point.c
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #include "core/core_point.h"
 
 t_point3		*p_point3(double x, double y, double z)

@@ -1,45 +1,37 @@
-//
-//  draw.c
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 23/07/2019.
-//
-
 #include "draw/draw.h"
 
-static int          clear(t_frc *frc)
+int			draw_init(t_frc *frc)
 {
-	int        *canvas_data;
-	int        bits;
-	int        len;
-	
-	if (!(frc->cvs->img))
-		frc->cvs->img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
-	canvas_data = (int *)mlx_get_data_addr(frc->cvs->img, &bits,
-										   &len, &len);
-	len = WIN_WIDTH * WIN_HEIGHT * (bits / 32);
-	while (--len)
-		canvas_data[len] = 0;
+	if (!(mandelbrot_init(frc)) ||
+		!(julia_init(frc)) ||
+		!(frc->cvs->draw(frc)))
+		return (0);
 	return (1);
 }
 
-int		draw_init(t_frc *frc)
+int			mandelbrot_init(t_frc *frc)
 {
-  if (!(mandelbrot_init(frc)) ||
-		!(frc->cvs->draw(frc)))
-    return (0);
-  return (1);
+	frc->cvs = &frc->jl.cvs;
+	clear(frc);
+	frc->mb.cvs.c = 0x030306;
+	frc->mb.cvs.i = 300;
+	frc->mb.cvs.min = complex(-4, -2);
+	frc->mb.cvs.max = complex(4, 2);
+	frc->mb.cvs.t = point3(-0.5, 0, 1);
+	frc->mb.cvs.draw = (int (*)(void *))draw_mandelbrot;
+	return (1);
 }
 
-int   mandelbrot_init(t_frc *frc)
+int			julia_init(t_frc *frc)
 {
-  frc->cvs = &frc->mb.cvs;
+	frc->cvs = &frc->jl.cvs;
 	clear(frc);
-  frc->mb.cvs.c = 0x030306;
-  frc->mb.cvs.i = 300;
-  frc->mb.cvs.min = complex(-4, -2);
-  frc->mb.cvs.max = complex(4, 2);
-  frc->mb.cvs.t = point3(-0.5, 0, 1);
-  frc->mb.cvs.draw = (int (*)(void *))draw_mandelbrot;
-  return (1);
+	frc->jl.cvs.c = 0x011212;
+	frc->jl.cvs.i = 300;
+	frc->jl.cvs.min = complex(-4, -2);
+	frc->jl.cvs.max = complex(4, 2);
+	frc->jl.cvs.t = point3(-0.5, 0, 1);
+	frc->jl.c = complex(-0.7, 0.27015);
+	frc->jl.cvs.draw = (int (*)(void *))draw_julia;
+	return (1);
 }

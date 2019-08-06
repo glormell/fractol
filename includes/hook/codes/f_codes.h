@@ -1,10 +1,3 @@
-//
-//  f_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef F_CODES_H
 # define F_CODES_H
 # define K_F1	122

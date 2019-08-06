@@ -2,9 +2,9 @@
 # define T_MANDELBROT_H
 # include "core/t_canvas.h"
 
-typedef struct  s_mandelbrot
+typedef struct	s_mandelbrot
 {
-  t_canvas  cvs;
-}        t_mandelbrot;
+	t_canvas	cvs;
+}				t_mandelbrot;
 
 #endif

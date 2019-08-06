@@ -1,10 +1,3 @@
-//
-//  hook_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef HOOK_CODES_H
 # define HOOK_CODES_H
 # include "hook/codes/arithmetic_codes.h"

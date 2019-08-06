@@ -15,10 +15,10 @@ int				key_press(int key, t_frc *frc)
 	static int	shift = 0;
 	
   (void)shift;
-	if (is_close(key))
-		close_hook(frc);
-  if (is_move(key))
-    move_hook(key, frc);
+	if (is_keys_close(key))
+		close_keys_hook(frc);
+  if (is_keys_move(key))
+    move_keys_hook(key, frc);
 	return (0);
 }
 

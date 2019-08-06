@@ -1,10 +1,3 @@
-//
-//  event_codes.h
-//  Fractol
-//
-//  Created by Garth tyrell Lormelle on 11/07/2019.
-//
-
 #ifndef EVENT_CODES_H
 # define EVENT_CODES_H
 # define E_KPRESS		2

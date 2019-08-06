@@ -1,12 +1,12 @@
-#include "hook/keys/hook_move.h"
+#include "hook/keys/hook_keys_move.h"
 
-int    is_move(int key)
+int    is_keys_move(int key)
 {
   return (key == K_ARW_L || key == K_ARW_R ||
           key == K_ARW_B || key == K_ARW_T);
 }
 
-int    move_hook(int key, t_frc *frc)
+int    move_keys_hook(int key, t_frc *frc)
 {
   if (key == K_ARW_L && frc->cvs)
     frc->cvs->t.x -= fabs(frc->cvs->max.r - frc->cvs->min.r) * 0.1;
