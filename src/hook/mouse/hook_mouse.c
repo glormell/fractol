@@ -27,7 +27,9 @@
 int				mouse_press(int button, int x, int y, t_frc *frc)
 {
   (void)frc;
-	if (button == M_LEFT)
+	if (is_zoom(button))
+		hook_zoom(button, point2d(x, y), frc);
+	else if (button == M_LEFT)
 		mouse_move(x, y, (void *)0);
 	else if (button == M_MIDDLE)
 		mouse_move(x, y, (void *)1);

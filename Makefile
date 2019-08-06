@@ -18,6 +18,7 @@ CFILES = src/core/core.c \
   src/hook/keys/hook_move.c \
 	src/hook/keys/hook_keys.c \
 	src/hook/mouse/hook_mouse.c \
+	src/hook/mouse/hook_zoom.c \
 	src/main.c
 OFILES = $(CFILES:%.c=%.o)
 
