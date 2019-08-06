@@ -3,19 +3,19 @@ NAME = fractol
 MAKE = make
 CC = gcc
 COPT = 
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 CFILES = src/core/core.c \
 	src/core/core_point.c \
   src/core/core_complex.c \
 	src/core/core_window.c \
-	src/core/core_canvas.c \
 	src/core/core_error.c \
 	src/draw/draw.c \
 	src/draw/draw_helpers.c \
 	src/draw/draw_mandelbrot.c \
 	src/hook/hook.c \
 	src/hook/keys/hook_close.c \
+  src/hook/keys/hook_move.c \
 	src/hook/keys/hook_keys.c \
 	src/hook/mouse/hook_mouse.c \
 	src/main.c

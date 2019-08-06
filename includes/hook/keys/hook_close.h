@@ -13,6 +13,6 @@
 # include "hook/codes/hook_codes.h"
 
 int		is_close(int key);
-int		close_hook(void *param);
+int		close_hook(t_frc *frc);
 
 #endif

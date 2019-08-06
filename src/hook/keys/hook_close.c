@@ -12,13 +12,10 @@ int			is_close(int key)
 	return (key == K_ESC || key == K_Q);
 }
 
-int			close_hook(void *param)
+int			close_hook(t_frc *frc)
 {
-	t_frc	*frc;
-	
-	frc = (t_frc *)param;
-  if (frc->mb.img)
-    mlx_destroy_image(frc->mlx, frc->mb.img);
+  if (frc->mb.cvs.img)
+    mlx_destroy_image(frc->mlx, frc->mb.cvs.img);
 	free(frc->mlx);
 	free(frc->win);
 	free(frc);

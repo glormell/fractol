@@ -12,9 +12,10 @@
 
 typedef struct	s_frc
 {
-	void		*mlx;
-	void		*win;
-	t_point2	mouse;
+	void		      *mlx;
+	void		      *win;
+	t_point2	    mouse;
+  t_canvas      *cvs;
   t_mandelbrot  mb;
 }				t_frc;
 
