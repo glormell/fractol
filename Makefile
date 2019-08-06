@@ -15,6 +15,8 @@ CFILES = src/core/core.c \
 	src/draw/draw_mandelbrot.c \
 	src/draw/draw_julia.c \
 	src/hook/hook.c \
+	src/hook/hook_translate.c \
+	src/hook/hook_julia.c \
 	src/hook/keys/hook_keys_close.c \
 	src/hook/keys/hook_keys_move.c \
 	src/hook/keys/hook_keys.c \

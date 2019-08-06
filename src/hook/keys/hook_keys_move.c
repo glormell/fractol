@@ -9,13 +9,12 @@ int    is_keys_move(int key)
 int    move_keys_hook(int key, t_frc *frc)
 {
   if (key == K_ARW_L && frc->cvs)
-    frc->cvs->t.x -= fabs(frc->cvs->max.r - frc->cvs->min.r) * 0.1;
+    left_hook(frc);
   else if (key == K_ARW_R && frc->cvs)
-    frc->cvs->t.x += fabs(frc->cvs->max.r - frc->cvs->min.r) * 0.1;
+    right_hook(frc);
   else if (key == K_ARW_B && frc->cvs)
-    frc->cvs->t.y += fabs(frc->cvs->max.i - frc->cvs->min.i) * 0.1;
+    bottom_hook(frc);
   else if (key == K_ARW_T && frc->cvs)
-    frc->cvs->t.y -= fabs(frc->cvs->max.i - frc->cvs->min.i) * 0.1;
-  frc->cvs->draw(frc);
+    top_hook(frc);
   return (1);
 }

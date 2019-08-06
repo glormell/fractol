@@ -44,6 +44,10 @@
 		85714AA622F9C4A800301243 /* draw_julia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_julia.h; sourceTree = "<group>"; };
 		857C611622F8CA08005F0869 /* draw_helpers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_helpers.c; sourceTree = "<group>"; };
 		857C611722F8CA08005F0869 /* draw_helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_helpers.h; sourceTree = "<group>"; };
+		859547A522F9DA050001E10B /* hook_translate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_translate.c; sourceTree = "<group>"; };
+		859547A622F9DA050001E10B /* hook_translate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_translate.h; sourceTree = "<group>"; };
+		859547A722F9E2B60001E10B /* hook_julia.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_julia.c; sourceTree = "<group>"; };
+		859547A822F9E2B60001E10B /* hook_julia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_julia.h; sourceTree = "<group>"; };
 		85F69E7422D66FFA00AB1DAF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		85F69E7522D66FFA00AB1DAF /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		85F69E7822D6729400AB1DAF /* author */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = author; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				85107F6322D7604100CBA363 /* hook.c */,
+				859547A522F9DA050001E10B /* hook_translate.c */,
+				859547A722F9E2B60001E10B /* hook_julia.c */,
 				85107F6B22D7611600CBA363 /* keys */,
 				85107F6C22D7612100CBA363 /* mouse */,
 			);
@@ -75,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				85107F6422D7604100CBA363 /* hook.h */,
+				859547A622F9DA050001E10B /* hook_translate.h */,
+				859547A822F9E2B60001E10B /* hook_julia.h */,
 				85107F6F22D761DF00CBA363 /* codes */,
 				85107F6D22D7614100CBA363 /* keys */,
 				85107F6E22D7614900CBA363 /* mouse */,

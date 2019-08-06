@@ -1,5 +1,5 @@
-#ifndef HOOK_ZOOM_H
-# define HOOK_ZOOM_H
+#ifndef HOOK_MOUSE_ZOOM_H
+# define HOOK_MOUSE_ZOOM_H
 # include "core/t_frc.h"
 # include "core/core_point.h"
 # include "core/core_complex.h"

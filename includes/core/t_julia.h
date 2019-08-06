@@ -6,6 +6,7 @@
 typedef struct	s_julia
 {
 	t_canvas	cvs;
+	t_point2d	p;
 	t_complex	c;
 }				t_julia;
 
