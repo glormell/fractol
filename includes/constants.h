@@ -11,5 +11,6 @@
 # define WIN_HEIGHT	720
 # define WIN_TITLE	"Fractol"
 # define ENDIAN		0
-# define THREADS    4
+# define THREADS    36
+# define T_WIDTH	20
 #endif
