@@ -61,16 +61,16 @@ int				draw_julia(t_frc *frc)
 		f = point2d(0, i * T_WIDTH);
 		t = point2d(WIN_WIDTH, (i + 1) * T_WIDTH);
 		w[i] = (t_jl_worker){frc, f, t};
-		pthread_create((p + i), NULL,
-					   (void *(*)(void *))julia_worker, (void *)(w + i));
+		pthread_create((p + i), 0, (void *(*)(void *))julia_worker,
+					   (void *)(w + i));
 	}
 	while (i--)
-		pthread_join(p[i], NULL);
+		pthread_join(p[i], 0);
 	mlx_put_image_to_window(frc->mlx, frc->win, frc->cvs->img, 0, 0);
 	return (1);
 }
 
-int			julia_init(t_frc *frc)
+int				julia_init(t_frc *frc)
 {
 	clear(frc->mlx, &frc->jl.cvs);
 	frc->jl.cvs.c = 0x010505;

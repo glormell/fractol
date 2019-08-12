@@ -5,7 +5,7 @@ t_complex    *p_complex(double r, double i)
   t_complex  *complex;
   
   if (!(complex = (t_complex *)ft_memalloc(sizeof(t_complex))))
-    return (NULL);
+    return (0);
   complex->r = r;
   complex->i = i;
   return (complex);

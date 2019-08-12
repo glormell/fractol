@@ -19,8 +19,12 @@ int				key_press(int key, t_frc *frc)
 		close_keys_hook(frc);
 	if (is_keys_move(key))
 		move_keys_hook(key, frc);
-	if (key == K_F)
-		random_color(frc);
+	if (is_keys_random(key))
+		random_keys_hook(frc);
+	if (is_keys_repair(key))
+		repair_keys_hook(frc);
+	if (is_keys_select(key))
+		select_keys_hook(key, frc);
 	return (0);
 }
 

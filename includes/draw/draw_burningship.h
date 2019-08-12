@@ -16,5 +16,6 @@ typedef struct	s_bs_worker
 }				t_bs_worker;
 
 int		draw_burningship(t_frc *frc);
+int		burningship_init(t_frc *frc);
 
 #endif

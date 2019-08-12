@@ -16,5 +16,6 @@ typedef struct	s_mb_worker
 }				t_mb_worker;
 
 int		draw_mandelbrot(t_frc *frc);
+int		mandelbrot_init(t_frc *frc);
 
 #endif

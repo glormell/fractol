@@ -20,6 +20,9 @@ CFILES = src/core/core.c \
 	src/hook/hook_julia.c \
 	src/hook/keys/hook_keys_close.c \
 	src/hook/keys/hook_keys_move.c \
+	src/hook/keys/hook_keys_random.c \
+	src/hook/keys/hook_keys_repair.c \
+	src/hook/keys/hook_keys_select.c \
 	src/hook/keys/hook_keys.c \
 	src/hook/mouse/hook_mouse.c \
 	src/hook/mouse/hook_mouse_zoom.c \

@@ -44,19 +44,8 @@ void				apply_zoom(t_frc *frc, t_complex m, double zoom)
 							inter(m.i, frc->cvs->max.i, zoom));
 }
 
-void				random_color(t_frc *frc)
+int					select_canvas(t_frc *frc, t_canvas *cvs)
 {
-	int				color;
-	int				i;
-
-	color = 0;
-	i = 24;
-	srand(time(0));
-	while (i != 0)
-	{
-		i -= 8;
-		color += color % 2 ? 0 : ((unsigned char)(rand() % 30) << i);
-	}
-	frc->cvs->c = color;
-	frc->cvs->draw(frc);
+	frc->cvs = cvs;
+	return (1);
 }

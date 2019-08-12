@@ -16,5 +16,6 @@ typedef struct	s_jl_worker
 }				t_jl_worker;
 
 int		draw_julia(t_frc *frc);
+int		julia_init(t_frc *frc);
 
 #endif

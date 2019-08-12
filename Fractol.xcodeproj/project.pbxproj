@@ -46,6 +46,12 @@
 		857C611722F8CA08005F0869 /* draw_helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_helpers.h; sourceTree = "<group>"; };
 		8586355B230177C80006023A /* draw_burningship.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_burningship.c; sourceTree = "<group>"; };
 		8586355C230177C80006023A /* draw_burningship.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_burningship.h; sourceTree = "<group>"; };
+		8586355D230191010006023A /* hook_keys_random.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_keys_random.c; sourceTree = "<group>"; };
+		8586355E230191010006023A /* hook_keys_random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_random.h; sourceTree = "<group>"; };
+		8586355F230193470006023A /* hook_keys_repair.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_keys_repair.c; sourceTree = "<group>"; };
+		85863560230193470006023A /* hook_keys_repair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_repair.h; sourceTree = "<group>"; };
+		85863561230196DE0006023A /* hook_keys_select.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_keys_select.c; sourceTree = "<group>"; };
+		85863562230196DE0006023A /* hook_keys_select.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_select.h; sourceTree = "<group>"; };
 		859547A522F9DA050001E10B /* hook_translate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_translate.c; sourceTree = "<group>"; };
 		859547A622F9DA050001E10B /* hook_translate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_translate.h; sourceTree = "<group>"; };
 		859547A722F9E2B60001E10B /* hook_julia.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_julia.c; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 				85107F6722D760EE00CBA363 /* hook_keys.c */,
 				85107F6522D7608600CBA363 /* hook_keys_close.c */,
 				C34429BB22F8EF0C004A3A94 /* hook_keys_move.c */,
+				8586355D230191010006023A /* hook_keys_random.c */,
+				8586355F230193470006023A /* hook_keys_repair.c */,
+				85863561230196DE0006023A /* hook_keys_select.c */,
 			);
 			path = keys;
 			sourceTree = "<group>";
@@ -118,6 +127,9 @@
 				85107F6822D760EE00CBA363 /* hook_keys.h */,
 				85107F6622D7608600CBA363 /* hook_keys_close.h */,
 				C34429BA22F8EF0C004A3A94 /* hook_keys_move.h */,
+				8586355E230191010006023A /* hook_keys_random.h */,
+				85863560230193470006023A /* hook_keys_repair.h */,
+				85863562230196DE0006023A /* hook_keys_select.h */,
 			);
 			path = keys;
 			sourceTree = "<group>";

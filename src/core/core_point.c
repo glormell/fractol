@@ -5,7 +5,7 @@ t_point3		*p_point3(double x, double y, double z)
 	t_point3	*point;
 	
 	if (!(point = (t_point3 *)ft_memalloc(sizeof(t_point3))))
-		return (NULL);
+		return (0);
 	point->x = x;
 	point->y = y;
 	point->z = z;
@@ -22,7 +22,7 @@ t_point2		*p_point2(int x, int y)
 	t_point2	*point;
 	
 	if (!(point = (t_point2 *)ft_memalloc(sizeof(t_point2))))
-		return (NULL);
+		return (0);
 	point->x = x;
 	point->y = y;
 	return (point);

@@ -61,18 +61,18 @@ int				draw_mandelbrot(t_frc *frc)
 		f = point2d(0, i * T_WIDTH);
 		t = point2d(WIN_WIDTH, (i + 1) * T_WIDTH);
 		w[i] = (t_mb_worker){frc, f, t};
-		pthread_create((p + i), NULL,
-					   (void *(*)(void *))mandelbrot_worker, (void *)(w + i));
+		pthread_create((p + i), 0, (void *(*)(void *))mandelbrot_worker,
+					   (void *)(w + i));
 	}
 	while (i--)
-		pthread_join(p[i], NULL);
+		pthread_join(p[i], 0);
 	mlx_put_image_to_window(frc->mlx, frc->win, frc->cvs->img, 0, 0);
 	return (1);
 }
 
-int			mandelbrot_init(t_frc *frc)
+int				mandelbrot_init(t_frc *frc)
 {
-	clear(frc->mlx, &frc->jl.cvs);
+	clear(frc->mlx, &frc->mb.cvs);
 	frc->mb.cvs.c = 0x030306;
 	frc->mb.cvs.i = 300;
 	frc->mb.cvs.min = complex(-4, -2);
