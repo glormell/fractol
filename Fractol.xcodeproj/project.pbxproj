@@ -48,6 +48,7 @@
 		859547A622F9DA050001E10B /* hook_translate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_translate.h; sourceTree = "<group>"; };
 		859547A722F9E2B60001E10B /* hook_julia.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_julia.c; sourceTree = "<group>"; };
 		859547A822F9E2B60001E10B /* hook_julia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_julia.h; sourceTree = "<group>"; };
+		85B8500223017382007AC11F /* t_burningship.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_burningship.h; sourceTree = "<group>"; };
 		85F69E7422D66FFA00AB1DAF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		85F69E7522D66FFA00AB1DAF /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		85F69E7822D6729400AB1DAF /* author */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = author; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 				85107F8022D76B1B00CBA363 /* t_canvas.h */,
 				C392109522F7BF0B00A0B0B8 /* t_mandelbrot.h */,
 				85F7BA7D22F9BA60004C9A48 /* t_julia.h */,
+				85B8500223017382007AC11F /* t_burningship.h */,
 			);
 			path = core;
 			sourceTree = "<group>";

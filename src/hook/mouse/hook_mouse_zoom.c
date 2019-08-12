@@ -17,6 +17,7 @@ int				zoom_mouse_hook(int button, t_point2d p, t_frc *frc)
 		apply_zoom(frc, c, 1.2);
 	else if (button == M_SCR_DOWN)
 		apply_zoom(frc, c, 1 / 1.2);
+//	mouse_move(p.x, p.y, (void *)3);
 	frc->cvs->draw(frc);
 	return (1);
 }
