@@ -16,7 +16,7 @@ int			draw_init(t_frc *frc, char *type)
 		select_canvas(frc, &frc->bs.cvs);
 	if (t == 0)
 		if (menu_init(frc))
-			frc->menu.draw(frc);
+			frc->mn.draw(frc);
 	if (t)
 		frc->cvs->draw(frc);
 	return (1);

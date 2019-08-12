@@ -9,7 +9,7 @@ int    menu_keys_hook(t_frc *frc)
 {
 	if (!(frc->cvs))
 		return (0);
-	frc->menu.s = !frc->menu.s;
+	frc->mn.s = !frc->mn.s;
 	frc->cvs->draw(frc);
 	return (0);
 }

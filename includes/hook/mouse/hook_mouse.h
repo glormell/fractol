@@ -10,7 +10,7 @@
 
 t_point2	canvas_mouse(t_frc *frc);
 int			mouse_press(int button, int x, int y, t_frc *frc);
-int			mouse_release(int button, int x, int y, void *param);
+int			mouse_release(int button, int x, int y, t_frc *frc);
 int			mouse_move(int x, int y, t_frc *frc);
 
 #endif

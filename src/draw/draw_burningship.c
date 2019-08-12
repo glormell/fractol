@@ -67,8 +67,8 @@ int				draw_burningship(t_frc *frc)
 	while (i--)
 		pthread_join(p[i], 0);
 	mlx_put_image_to_window(frc->mlx, frc->win, frc->cvs->img, 0, 0);
-	if (frc->menu.s)
-		frc->menu.draw(frc);
+	if (frc->mn.s)
+		frc->mn.draw(frc);
 	return (1);
 }
 

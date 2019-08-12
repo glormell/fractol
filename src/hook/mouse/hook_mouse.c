@@ -2,52 +2,43 @@
 
 int				mouse_press(int button, int x, int y, t_frc *frc)
 {
-  (void)frc;
+	if (x <= 0 || y <= 0 || x >= WIN_WIDTH || y >= WIN_HEIGHT)
+		return (0);
 	if (is_mouse_zoom(button))
 		zoom_mouse_hook(button, point2d(x, y), frc);
 	else if (button == M_LEFT)
-		mouse_move(x, y, (void *)0);
+		frc->ms.l = 1;
 	else if (button == M_MIDDLE)
-		mouse_move(x, y, (void *)1);
+		frc->ms.m = 1;
 	else if (button == M_RIGHT)
-		mouse_move(x, y, (void *)2);
+		frc->ms.r = 1;
 	return (0);
 }
 
-int				mouse_release(int button, int x, int y, void *param)
+int				mouse_release(int button, int x, int y, t_frc *frc)
 {
-	(void)param;
+	if (x <= 0 || y <= 0 || x >= WIN_WIDTH || y >= WIN_HEIGHT)
+		return (0);
+	menu_click_hook(point2(x, y), button, frc);
 	if (button == M_LEFT)
-		mouse_move(x, y, (void *)0);
+		frc->ms.l = 0;
 	else if (button == M_MIDDLE)
-		mouse_move(x, y, (void *)1);
+		frc->ms.m = 0;
 	else if (button == M_RIGHT)
-		mouse_move(x, y, (void *)2);
+		frc->ms.r = 0;
 	return (0);
 }
 
 int				mouse_move(int x, int y, t_frc *frc)
 {
-	static t_point2	prev = (t_point2){ 0, 0 };
-	static int		left = 0;
-	static int		middle = 0;
-	static int		right = 0;
-	
-	if ((void *)frc == (void *)0)
-		return ((y > 0) || left ? left = !left : 0);
-	else if ((void *)frc == (void *)1)
-		return ((y > 0) || middle ? middle = !middle : 0);
-	else if ((void *)frc == (void *)2)
-		return ((y > 0) || right ? right = !right : 0);
-	if (frc->menu.s && is_menu_hook(point2(x, y), frc))
+	if (frc->mn.s && is_menu_hook(point2(x, y), frc))
 		return (menu_hook(point2(x, y), frc));
 	else
 		clear_menu(frc);
-	if (left)
-		translate_hook(point2((prev.x - x), (prev.y - y)), frc);
-	else if (frc->cvs == &frc->jl.cvs && (frc->jl.unlocked || right))
-		julia_hook(point2((prev.x - x), (prev.y - y)), frc);
-	prev = point2(x, y);
-	frc->mouse = prev;
+	if (frc->ms.l)
+		translate_hook(point2((frc->ms.p.x - x), (frc->ms.p.y - y)), frc);
+	else if (frc->cvs == &frc->jl.cvs && (frc->jl.unlocked || frc->ms.r))
+		julia_hook(point2((frc->ms.p.x - x), (frc->ms.p.y - y)), frc);
+	frc->ms.p = point2(x, y);
 	return (0);
 }

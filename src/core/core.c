@@ -9,6 +9,10 @@ t_frc		*p_frc(void *mlx, int *win_count, char *type)
 		return (0);
 	frc->mlx = mlx;
 	frc->win_count = win_count;
+	frc->ms.p = point2(0, 0);
+	frc->ms.l = 0;
+	frc->ms.m = 0;
+	frc->ms.r = 0;
 	if ((!(win_init(frc, WIN_WIDTH, WIN_HEIGHT, WIN_TITLE))) ||
 		(!(hook_init(frc))) ||
 		(!(draw_init(frc, type))))

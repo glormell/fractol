@@ -32,7 +32,6 @@
 		85107F8022D76B1B00CBA363 /* t_canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_canvas.h; sourceTree = "<group>"; };
 		85107F8122D76C4000CBA363 /* core_error.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = core_error.c; sourceTree = "<group>"; };
 		85107F8222D76C4000CBA363 /* core_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_error.h; sourceTree = "<group>"; };
-		85107F8422D76CAC00CBA363 /* core_canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_canvas.h; sourceTree = "<group>"; };
 		851863CD22F9930600D679A8 /* hook_mouse_zoom.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_mouse_zoom.c; sourceTree = "<group>"; };
 		851863CE22F9930600D679A8 /* hook_mouse_zoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_mouse_zoom.h; sourceTree = "<group>"; };
 		8570E51822E78AC1006DF344 /* draw_mandelbrot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_mandelbrot.c; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		85F667D82301E46F0053B35A /* hook_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_menu.h; sourceTree = "<group>"; };
 		85F667D92301F32A0053B35A /* hook_keys_menu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_keys_menu.c; sourceTree = "<group>"; };
 		85F667DA2301F32A0053B35A /* hook_keys_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_menu.h; sourceTree = "<group>"; };
+		85F667DB2301FB110053B35A /* t_mouse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_mouse.h; sourceTree = "<group>"; };
 		85F69E7422D66FFA00AB1DAF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		85F69E7522D66FFA00AB1DAF /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		85F69E7822D6729400AB1DAF /* author */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = author; sourceTree = "<group>"; };
@@ -218,13 +218,6 @@
 			path = input;
 			sourceTree = "<group>";
 		};
-		85F667D52301C8DF0053B35A /* menu */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = menu;
-			sourceTree = "<group>";
-		};
 		85F667D62301C8E60053B35A /* menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				85F69E7422D66FFA00AB1DAF /* main.c */,
-				85F667D52301C8DF0053B35A /* menu */,
 				85F69E7E22D67B7500AB1DAF /* core */,
 				8570E51622E7879C006DF344 /* draw */,
 				85107F6122D7600B00CBA363 /* hook */,
@@ -286,7 +278,6 @@
 			children = (
 				85F69E8122D67C5600AB1DAF /* core.h */,
 				85107F5F22D75E9600CBA363 /* core_window.h */,
-				85107F8422D76CAC00CBA363 /* core_canvas.h */,
 				85107F7C22D7666800CBA363 /* core_point.h */,
 				C392109622F7D0B700A0B0B8 /* core_complex.h */,
 				85107F8222D76C4000CBA363 /* core_error.h */,
@@ -296,6 +287,7 @@
 				85F7BA7D22F9BA60004C9A48 /* t_julia.h */,
 				85B8500223017382007AC11F /* t_burningship.h */,
 				85F667D42301C0270053B35A /* t_menu.h */,
+				85F667DB2301FB110053B35A /* t_mouse.h */,
 			);
 			path = core;
 			sourceTree = "<group>";

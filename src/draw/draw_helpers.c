@@ -46,9 +46,9 @@ void				apply_zoom(t_frc *frc, t_complex m, double zoom)
 
 int					select_canvas(t_frc *frc, t_canvas *cvs)
 {
-	frc->menu.mb.a = cvs == &frc->mb.cvs ? 1 : 0;
-	frc->menu.jl.a = cvs == &frc->jl.cvs ? 1 : 0;
-	frc->menu.bs.a = cvs == &frc->bs.cvs ? 1 : 0;
+	frc->mn.mb.a = cvs == &frc->mb.cvs ? 1 : 0;
+	frc->mn.jl.a = cvs == &frc->jl.cvs ? 1 : 0;
+	frc->mn.bs.a = cvs == &frc->bs.cvs ? 1 : 0;
 	frc->cvs = cvs;
 	return (1);
 }
