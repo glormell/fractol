@@ -24,6 +24,9 @@ typedef struct		s_menu
 	t_menu_button	mb;
 	t_menu_button	jl;
 	t_menu_button	bs;
+	t_menu_button	rp;
+	t_menu_button	rd;
+	t_menu_button	jt;
 	t_menu_button	q;
 	t_menu_button	h;
 	int				(*draw)(void *);

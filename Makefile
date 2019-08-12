@@ -31,6 +31,10 @@ CFILES = src/core/core.c \
 	src/hook/mouse/hook_mouse.c \
 	src/hook/mouse/hook_mouse_zoom.c \
 	src/input/input.c \
+	src/menu/menu_main.c \
+	src/menu/menu_mod.c \
+	src/menu/menu_action.c \
+	src/menu/menu.c \
 	src/main.c
 OFILES = $(CFILES:%.c=%.o)
 
