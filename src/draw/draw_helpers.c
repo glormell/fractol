@@ -10,8 +10,8 @@ int	clear(void *mlx, t_canvas *cvs)
 		cvs->img = mlx_new_image(mlx, WIN_WIDTH, WIN_HEIGHT);
 	canvas_data = (int *)mlx_get_data_addr(cvs->img, &bits, &len, &len);
 	len = WIN_WIDTH * WIN_HEIGHT * (bits / 32);
-	while (--len)
-		canvas_data[len] = 0;
+	while (len)
+		canvas_data[--len] = 0;
 	return (1);
 }
 
@@ -46,6 +46,9 @@ void				apply_zoom(t_frc *frc, t_complex m, double zoom)
 
 int					select_canvas(t_frc *frc, t_canvas *cvs)
 {
+	frc->menu.mb.a = cvs == &frc->mb.cvs ? 1 : 0;
+	frc->menu.jl.a = cvs == &frc->jl.cvs ? 1 : 0;
+	frc->menu.bs.a = cvs == &frc->bs.cvs ? 1 : 0;
 	frc->cvs = cvs;
 	return (1);
 }

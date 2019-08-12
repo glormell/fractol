@@ -1,6 +1,6 @@
 #include "hook/keys/hook_keys_quit.h"
 
-int			is_keys_quit(int key)
+int			is_quit_keys(int key)
 {
 	return (key == K_ESC || key == K_Q);
 }

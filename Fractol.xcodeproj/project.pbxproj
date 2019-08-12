@@ -32,7 +32,6 @@
 		85107F8022D76B1B00CBA363 /* t_canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_canvas.h; sourceTree = "<group>"; };
 		85107F8122D76C4000CBA363 /* core_error.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = core_error.c; sourceTree = "<group>"; };
 		85107F8222D76C4000CBA363 /* core_error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_error.h; sourceTree = "<group>"; };
-		85107F8322D76CAC00CBA363 /* core_canvas.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = core_canvas.c; sourceTree = "<group>"; };
 		85107F8422D76CAC00CBA363 /* core_canvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core_canvas.h; sourceTree = "<group>"; };
 		851863CD22F9930600D679A8 /* hook_mouse_zoom.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_mouse_zoom.c; sourceTree = "<group>"; };
 		851863CE22F9930600D679A8 /* hook_mouse_zoom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_mouse_zoom.h; sourceTree = "<group>"; };
@@ -61,6 +60,13 @@
 		859547A722F9E2B60001E10B /* hook_julia.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_julia.c; sourceTree = "<group>"; };
 		859547A822F9E2B60001E10B /* hook_julia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_julia.h; sourceTree = "<group>"; };
 		85B8500223017382007AC11F /* t_burningship.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_burningship.h; sourceTree = "<group>"; };
+		85F667D22301BF320053B35A /* draw_menu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_menu.c; sourceTree = "<group>"; };
+		85F667D32301BF320053B35A /* draw_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_menu.h; sourceTree = "<group>"; };
+		85F667D42301C0270053B35A /* t_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_menu.h; sourceTree = "<group>"; };
+		85F667D72301E46F0053B35A /* hook_menu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_menu.c; sourceTree = "<group>"; };
+		85F667D82301E46F0053B35A /* hook_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_menu.h; sourceTree = "<group>"; };
+		85F667D92301F32A0053B35A /* hook_keys_menu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_keys_menu.c; sourceTree = "<group>"; };
+		85F667DA2301F32A0053B35A /* hook_keys_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_menu.h; sourceTree = "<group>"; };
 		85F69E7422D66FFA00AB1DAF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		85F69E7522D66FFA00AB1DAF /* main.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		85F69E7822D6729400AB1DAF /* author */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = author; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 				85107F6322D7604100CBA363 /* hook.c */,
 				859547A522F9DA050001E10B /* hook_translate.c */,
 				859547A722F9E2B60001E10B /* hook_julia.c */,
+				85F667D72301E46F0053B35A /* hook_menu.c */,
 				85107F6B22D7611600CBA363 /* keys */,
 				85107F6C22D7612100CBA363 /* mouse */,
 			);
@@ -96,6 +103,7 @@
 				85107F6422D7604100CBA363 /* hook.h */,
 				859547A622F9DA050001E10B /* hook_translate.h */,
 				859547A822F9E2B60001E10B /* hook_julia.h */,
+				85F667D82301E46F0053B35A /* hook_menu.h */,
 				85107F6F22D761DF00CBA363 /* codes */,
 				85107F6D22D7614100CBA363 /* keys */,
 				85107F6E22D7614900CBA363 /* mouse */,
@@ -113,6 +121,7 @@
 				8586355D230191010006023A /* hook_keys_random.c */,
 				8586355F230193470006023A /* hook_keys_repair.c */,
 				85863561230196DE0006023A /* hook_keys_select.c */,
+				85F667D92301F32A0053B35A /* hook_keys_menu.c */,
 			);
 			path = keys;
 			sourceTree = "<group>";
@@ -136,6 +145,7 @@
 				8586355E230191010006023A /* hook_keys_random.h */,
 				85863560230193470006023A /* hook_keys_repair.h */,
 				85863562230196DE0006023A /* hook_keys_select.h */,
+				85F667DA2301F32A0053B35A /* hook_keys_menu.h */,
 			);
 			path = keys;
 			sourceTree = "<group>";
@@ -174,6 +184,7 @@
 				8570E51822E78AC1006DF344 /* draw_mandelbrot.c */,
 				85714AA522F9C4A800301243 /* draw_julia.c */,
 				8586355B230177C80006023A /* draw_burningship.c */,
+				85F667D22301BF320053B35A /* draw_menu.c */,
 			);
 			path = draw;
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 				8570E51922E78AC1006DF344 /* draw_mandelbrot.h */,
 				85714AA622F9C4A800301243 /* draw_julia.h */,
 				8586355C230177C80006023A /* draw_burningship.h */,
+				85F667D32301BF320053B35A /* draw_menu.h */,
 			);
 			path = draw;
 			sourceTree = "<group>";
@@ -206,6 +218,20 @@
 			path = input;
 			sourceTree = "<group>";
 		};
+		85F667D52301C8DF0053B35A /* menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
+		85F667D62301C8E60053B35A /* menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
 		85F69E6822D66F8700AB1DAF = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				85F69E7422D66FFA00AB1DAF /* main.c */,
+				85F667D52301C8DF0053B35A /* menu */,
 				85F69E7E22D67B7500AB1DAF /* core */,
 				8570E51622E7879C006DF344 /* draw */,
 				85107F6122D7600B00CBA363 /* hook */,
@@ -232,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				85F69E7522D66FFA00AB1DAF /* main.h */,
+				85F667D62301C8E60053B35A /* menu */,
 				85F69E7F22D67B8B00AB1DAF /* core */,
 				8570E51722E787B8006DF344 /* draw */,
 				85107F6222D7601800CBA363 /* hook */,
@@ -246,7 +274,6 @@
 			children = (
 				85F69E8022D67C5600AB1DAF /* core.c */,
 				85107F6022D75EBB00CBA363 /* core_window.c */,
-				85107F8322D76CAC00CBA363 /* core_canvas.c */,
 				85107F7F22D7675600CBA363 /* core_point.c */,
 				C392109722F7D0B700A0B0B8 /* core_complex.c */,
 				85107F8122D76C4000CBA363 /* core_error.c */,
@@ -268,6 +295,7 @@
 				C392109522F7BF0B00A0B0B8 /* t_mandelbrot.h */,
 				85F7BA7D22F9BA60004C9A48 /* t_julia.h */,
 				85B8500223017382007AC11F /* t_burningship.h */,
+				85F667D42301C0270053B35A /* t_menu.h */,
 			);
 			path = core;
 			sourceTree = "<group>";

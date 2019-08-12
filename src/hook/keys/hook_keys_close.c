@@ -1,6 +1,6 @@
 #include "hook/keys/hook_keys_close.h"
 
-int			is_keys_close(int key)
+int			is_close_keys(int key)
 {
 	return (key == E_CLOSE || key == XM_CLOSE);
 }

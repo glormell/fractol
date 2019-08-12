@@ -13,6 +13,8 @@ int		toggle_julia_hook(t_frc *frc)
 
 int		julia_hook(t_point2 p, t_frc *frc)
 {
+	if (!(frc->cvs))
+		return (0);
 	frc->jl.p.x += (double)p.x;
 	frc->jl.p.y += (double)p.y;
 	frc->jl.c = complex(frc->jl.p.x / (WIN_WIDTH / (frc->jl.max.r -

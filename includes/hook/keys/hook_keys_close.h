@@ -5,7 +5,7 @@
 # include "core/t_frc.h"
 # include "hook/codes/hook_codes.h"
 
-int		is_keys_close(int key);
+int		is_close_keys(int key);
 int		close_keys_hook(t_frc *frc);
 
 #endif

@@ -7,6 +7,7 @@
 # include "hook/keys/hook_keys_random.h"
 # include "hook/keys/hook_keys_repair.h"
 # include "hook/keys/hook_keys_select.h"
+# include "hook/keys/hook_keys_menu.h"
 # include "hook/hook_julia.h"
 # include "draw/draw_helpers.h"
 

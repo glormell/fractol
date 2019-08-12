@@ -5,6 +5,7 @@
 # include "hook/codes/mouse_codes.h"
 # include "hook/hook_translate.h"
 # include "hook/hook_julia.h"
+# include "hook/hook_menu.h"
 # include "hook/mouse/hook_mouse_zoom.h"
 
 t_point2	canvas_mouse(t_frc *frc);

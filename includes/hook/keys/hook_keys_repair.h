@@ -7,7 +7,7 @@
 # include "draw/draw_julia.h"
 # include "draw/draw_burningship.h"
 
-int    is_keys_repair(int key);
+int    is_repair_keys(int key);
 int    repair_keys_hook(t_frc *frc);
 
 #endif

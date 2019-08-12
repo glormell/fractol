@@ -5,7 +5,7 @@
 # include "hook/codes/hook_codes.h"
 # include "draw/draw_helpers.h"
 
-int    is_keys_select(int key);
+int    is_select_keys(int key);
 int    select_keys_hook(int key, t_frc *frc);
 
 #endif

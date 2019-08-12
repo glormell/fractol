@@ -6,7 +6,7 @@
 # include "core/t_frc.h"
 # include "hook/codes/hook_codes.h"
 
-int    is_keys_random(int key);
+int    is_random_keys(int key);
 int    random_keys_hook(t_frc *frc);
 
 #endif

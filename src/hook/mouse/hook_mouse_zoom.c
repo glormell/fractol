@@ -9,6 +9,8 @@ int				zoom_mouse_hook(int button, t_point2d p, t_frc *frc)
 {
 	t_complex	c;
 	
+	if (!(frc->cvs))
+		return (0);
 	c = complex(p.x / (WIN_WIDTH / (frc->cvs->max.r - frc->cvs->min.r)) +
 				frc->cvs->min.r,
 				p.y / (WIN_HEIGHT / (frc->cvs->max.i - frc->cvs->min.i)) +

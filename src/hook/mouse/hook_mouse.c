@@ -39,6 +39,10 @@ int				mouse_move(int x, int y, t_frc *frc)
 		return ((y > 0) || middle ? middle = !middle : 0);
 	else if ((void *)frc == (void *)2)
 		return ((y > 0) || right ? right = !right : 0);
+	if (frc->menu.s && is_menu_hook(point2(x, y), frc))
+		return (menu_hook(point2(x, y), frc));
+	else
+		clear_menu(frc);
 	if (left)
 		translate_hook(point2((prev.x - x), (prev.y - y)), frc);
 	else if (frc->cvs == &frc->jl.cvs && (frc->jl.unlocked || right))

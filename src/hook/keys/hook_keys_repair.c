@@ -1,12 +1,14 @@
 #include "hook/keys/hook_keys_repair.h"
 
-int    is_keys_repair(int key)
+int    is_repair_keys(int key)
 {
 	return (key == K_R);
 }
 
 int    repair_keys_hook(t_frc *frc)
 {
+	if (!(frc->cvs))
+		return (0);
 	if (frc->cvs == &frc->mb.cvs)
 		mandelbrot_init(frc);
 	if (frc->cvs == &frc->jl.cvs)

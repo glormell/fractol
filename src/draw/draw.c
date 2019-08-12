@@ -14,6 +14,9 @@ int			draw_init(t_frc *frc, char *type)
 		select_canvas(frc, &frc->jl.cvs);
 	if (t == 3)
 		select_canvas(frc, &frc->bs.cvs);
+	if (t == 0)
+		if (menu_init(frc))
+			frc->menu.draw(frc);
 	if (t)
 		frc->cvs->draw(frc);
 	return (1);

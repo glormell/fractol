@@ -5,7 +5,7 @@
 # include "hook/codes/hook_codes.h"
 # include "hook/hook_translate.h"
 
-int    is_keys_move(int key);
+int    is_move_keys(int key);
 int    move_keys_hook(int key, t_frc *frc);
 
 #endif

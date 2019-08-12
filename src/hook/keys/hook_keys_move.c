@@ -1,6 +1,6 @@
 #include "hook/keys/hook_keys_move.h"
 
-int    is_keys_move(int key)
+int    is_move_keys(int key)
 {
   return (key == K_ARW_L || key == K_ARW_R ||
           key == K_ARW_B || key == K_ARW_T);

@@ -15,20 +15,22 @@ int				key_press(int key, t_frc *frc)
 	static int	shift = 0;
 
 	(void)shift;
-	if (is_keys_quit(key))
+	if (is_quit_keys(key))
 		quit_keys_hook(frc);
-	if (is_keys_close(key))
+	if (is_close_keys(key))
 		close_keys_hook(frc);
-	if (is_keys_move(key))
+	if (is_move_keys(key))
 		move_keys_hook(key, frc);
-	if (is_keys_random(key))
+	if (is_random_keys(key))
 		random_keys_hook(frc);
-	if (is_keys_repair(key))
+	if (is_repair_keys(key))
 		repair_keys_hook(frc);
-	if (is_keys_select(key))
+	if (is_select_keys(key))
 		select_keys_hook(key, frc);
 	if (is_toggle_julia_hook(key))
 		toggle_julia_hook(frc);
+	if (is_menu_keys(key))
+		menu_keys_hook(frc);
 	return (0);
 }
 
