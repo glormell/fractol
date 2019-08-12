@@ -3,12 +3,19 @@
 int 		main(int argc, char **argv)
 {
 	
-	t_frc	*frc;
+	void	*mlx;
+	int		win_count;
+	t_frc	*frc[argc == 1 ? 1 : argc - 1];
 	
-  (void)argc;
-  (void)argv;
-	if (!(frc = p_frc()))
+	win_count = argc == 1 ? 1 : argc - 1;
+	if (!(mlx = mlx_init()))
 		exit(0);
-	mlx_loop(frc->mlx);
+	if (argc == 1)
+		if (!(frc[argc] = p_frc(mlx, &win_count, "")))
+			exit(0);
+	while (--argc)
+		if (!(frc[argc] = p_frc(mlx, &win_count, argv[argc])))
+			exit(0);
+	mlx_loop(mlx);
 	return (0);
 }

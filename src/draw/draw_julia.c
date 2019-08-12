@@ -82,6 +82,7 @@ int				julia_init(t_frc *frc)
 	frc->jl.cvs.t = point2d(-0.5, 0);
 	frc->jl.p = point2d(528, 408.627);
 	frc->jl.c = complex(-0.7, 0.27015);
+	frc->jl.unlocked = 0;
 	frc->jl.cvs.draw = (int (*)(void *))draw_julia;
 	return (1);
 }

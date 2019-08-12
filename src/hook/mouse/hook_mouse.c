@@ -39,14 +39,9 @@ int				mouse_move(int x, int y, t_frc *frc)
 		return ((y > 0) || middle ? middle = !middle : 0);
 	else if ((void *)frc == (void *)2)
 		return ((y > 0) || right ? right = !right : 0);
-	else if ((void *)frc == (void *)3)
-	{
-		prev = point2(0, 0);
-		return (0);
-	}
 	if (left)
 		translate_hook(point2((prev.x - x), (prev.y - y)), frc);
-	else if (right && frc->cvs == &frc->jl.cvs)
+	else if (frc->cvs == &frc->jl.cvs && (frc->jl.unlocked || right))
 		julia_hook(point2((prev.x - x), (prev.y - y)), frc);
 	prev = point2(x, y);
 	frc->mouse = prev;

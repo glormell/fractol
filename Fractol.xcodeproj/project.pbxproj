@@ -52,6 +52,10 @@
 		85863560230193470006023A /* hook_keys_repair.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_repair.h; sourceTree = "<group>"; };
 		85863561230196DE0006023A /* hook_keys_select.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_keys_select.c; sourceTree = "<group>"; };
 		85863562230196DE0006023A /* hook_keys_select.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_select.h; sourceTree = "<group>"; };
+		858635632301B2C80006023A /* hook_keys_quit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_keys_quit.c; sourceTree = "<group>"; };
+		858635642301B2C80006023A /* hook_keys_quit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_keys_quit.h; sourceTree = "<group>"; };
+		858635672301B8AC0006023A /* input.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = input.c; sourceTree = "<group>"; };
+		858635682301B8AC0006023A /* input.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
 		859547A522F9DA050001E10B /* hook_translate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_translate.c; sourceTree = "<group>"; };
 		859547A622F9DA050001E10B /* hook_translate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_translate.h; sourceTree = "<group>"; };
 		859547A722F9E2B60001E10B /* hook_julia.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_julia.c; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				85107F6722D760EE00CBA363 /* hook_keys.c */,
+				858635632301B2C80006023A /* hook_keys_quit.c */,
 				85107F6522D7608600CBA363 /* hook_keys_close.c */,
 				C34429BB22F8EF0C004A3A94 /* hook_keys_move.c */,
 				8586355D230191010006023A /* hook_keys_random.c */,
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				85107F6822D760EE00CBA363 /* hook_keys.h */,
+				858635642301B2C80006023A /* hook_keys_quit.h */,
 				85107F6622D7608600CBA363 /* hook_keys_close.h */,
 				C34429BA22F8EF0C004A3A94 /* hook_keys_move.h */,
 				8586355E230191010006023A /* hook_keys_random.h */,
@@ -184,6 +190,22 @@
 			path = draw;
 			sourceTree = "<group>";
 		};
+		858635652301B83B0006023A /* input */ = {
+			isa = PBXGroup;
+			children = (
+				858635682301B8AC0006023A /* input.h */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
+		858635662301B85E0006023A /* input */ = {
+			isa = PBXGroup;
+			children = (
+				858635672301B8AC0006023A /* input.c */,
+			);
+			path = input;
+			sourceTree = "<group>";
+		};
 		85F69E6822D66F8700AB1DAF = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +223,7 @@
 				85F69E7E22D67B7500AB1DAF /* core */,
 				8570E51622E7879C006DF344 /* draw */,
 				85107F6122D7600B00CBA363 /* hook */,
+				858635662301B85E0006023A /* input */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -212,6 +235,7 @@
 				85F69E7F22D67B8B00AB1DAF /* core */,
 				8570E51722E787B8006DF344 /* draw */,
 				85107F6222D7601800CBA363 /* hook */,
+				858635652301B83B0006023A /* input */,
 				85F69E8322D6839D00AB1DAF /* constants.h */,
 			);
 			path = includes;

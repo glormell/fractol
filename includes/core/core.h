@@ -9,6 +9,6 @@
 # include "hook/hook.h"
 # include "draw/draw.h"
 
-t_frc	*p_frc();
+t_frc	*p_frc(void *mlx, int *win_count, char *type);
 
 #endif

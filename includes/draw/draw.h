@@ -5,7 +5,8 @@
 # include "draw/draw_mandelbrot.h"
 # include "draw/draw_julia.h"
 # include "draw/draw_burningship.h"
+# include "input/input.h"
 
-int		draw_init(t_frc *frc);
+int		draw_init(t_frc *frc, char *type);
 
 #endif

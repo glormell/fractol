@@ -9,6 +9,7 @@ typedef struct		s_frc
 {
 	void			*mlx;
 	void			*win;
+	int				*win_count;
 	t_point2		mouse;
 	t_canvas		*cvs;
 	t_mandelbrot	mb;

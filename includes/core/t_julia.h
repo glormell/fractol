@@ -10,6 +10,7 @@ typedef struct	s_julia
 	t_complex	c;
 	t_complex	min;
 	t_complex	max;
+	int			unlocked;
 }				t_julia;
 
 #endif

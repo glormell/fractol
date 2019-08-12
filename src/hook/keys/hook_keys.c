@@ -15,6 +15,8 @@ int				key_press(int key, t_frc *frc)
 	static int	shift = 0;
 
 	(void)shift;
+	if (is_keys_quit(key))
+		quit_keys_hook(frc);
 	if (is_keys_close(key))
 		close_keys_hook(frc);
 	if (is_keys_move(key))
@@ -25,6 +27,8 @@ int				key_press(int key, t_frc *frc)
 		repair_keys_hook(frc);
 	if (is_keys_select(key))
 		select_keys_hook(key, frc);
+	if (is_toggle_julia_hook(key))
+		toggle_julia_hook(frc);
 	return (0);
 }
 

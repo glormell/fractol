@@ -1,5 +1,16 @@
 #include "hook/hook_julia.h"
 
+int		is_toggle_julia_hook(int key)
+{
+	return (key == K_SPACE);
+}
+
+int		toggle_julia_hook(t_frc *frc)
+{
+	frc->jl.unlocked = !frc->jl.unlocked;
+	return (0);
+}
+
 int		julia_hook(t_point2 p, t_frc *frc)
 {
 	frc->jl.p.x += (double)p.x;

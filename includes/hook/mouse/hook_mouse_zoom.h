@@ -4,7 +4,6 @@
 # include "core/core_point.h"
 # include "core/core_complex.h"
 # include "hook/codes/mouse_codes.h"
-# include "hook/mouse/hook_mouse.h"
 # include "draw/draw_helpers.h"
 
 int				is_mouse_zoom(int button);

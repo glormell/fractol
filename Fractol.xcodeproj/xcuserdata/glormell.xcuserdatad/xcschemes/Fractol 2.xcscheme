@@ -102,6 +102,20 @@
             ReferencedContainer = "container:Fractol.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "Mandelbrot"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "Julia"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "Burningship"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
