@@ -1,15 +1,14 @@
 #include "draw/draw_helpers.h"
 
-int	clear(t_frc *frc)
+int	clear(void *mlx, t_canvas *cvs)
 {
 	int		*canvas_data;
 	int		bits;
 	int		len;
 	
-	if (!(frc->cvs->img))
-		frc->cvs->img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
-	canvas_data = (int *)mlx_get_data_addr(frc->cvs->img, &bits,
-										   &len, &len);
+	if (!(cvs->img))
+		cvs->img = mlx_new_image(mlx, WIN_WIDTH, WIN_HEIGHT);
+	canvas_data = (int *)mlx_get_data_addr(cvs->img, &bits, &len, &len);
 	len = WIN_WIDTH * WIN_HEIGHT * (bits / 32);
 	while (--len)
 		canvas_data[len] = 0;
@@ -43,4 +42,21 @@ void				apply_zoom(t_frc *frc, t_complex m, double zoom)
 							inter(m.i, frc->cvs->min.i, zoom));
 	frc->cvs->max = complex(inter(m.r, frc->cvs->max.r, zoom),
 							inter(m.i, frc->cvs->max.i, zoom));
+}
+
+void				random_color(t_frc *frc)
+{
+	int				color;
+	int				i;
+
+	color = 0;
+	i = 24;
+	srand(time(0));
+	while (i != 0)
+	{
+		i -= 8;
+		color += color % 2 ? 0 : ((unsigned char)(rand() % 30) << i);
+	}
+	frc->cvs->c = color;
+	frc->cvs->draw(frc);
 }

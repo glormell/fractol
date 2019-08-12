@@ -1,19 +1,19 @@
-#include "draw/draw_julia.h"
+#include "draw/draw_burningship.h"
 
-static void		julia_iterator(t_frc *frc, t_complex p, t_point2 c)
+static void		burningship_iterator(t_frc *frc, t_complex p, t_point2 c)
 {
 	t_complex	o;
 	t_complex	n;
 	int		i;
 	
-	n = p;
+	n = complex(0, 0);
 	o = complex(0, 0);
 	i = 0;
 	while (i < frc->cvs->i && n.r * n.r + n.i * n.i <= 4)
 	{
 		o = n;
-		n = complex(o.r * o.r - n.i * n.i + frc->jl.c.r,
-					2 * o.r * n.i + frc->jl.c.i);
+		n = complex(fabs(o.r * o.r - o.i * o.i + p.r),
+					fabs(2 * o.r * o.i + p.i));
 		++i;
 	}
 	if (i == frc->cvs->i)
@@ -22,7 +22,7 @@ static void		julia_iterator(t_frc *frc, t_complex p, t_point2 c)
 		put_pixel(frc, c, frc->cvs->c * i);
 }
 
-static void		*julia_worker(t_jl_worker *w)
+static void		*burningship_worker(t_bs_worker *w)
 {
 	t_complex	p;
 	t_point2	c;
@@ -39,7 +39,7 @@ static void		*julia_worker(t_jl_worker *w)
 						c.y / (WIN_HEIGHT / (w->frc->cvs->max.i -
 											 w->frc->cvs->min.i)) +
 						w->frc->cvs->min.i + w->frc->cvs->t.y);
-			julia_iterator(w->frc, p, c);
+			burningship_iterator(w->frc, p, c);
 			++c.x;
 		}
 		++c.y;
@@ -47,10 +47,10 @@ static void		*julia_worker(t_jl_worker *w)
 	pthread_exit(0);
 }
 
-int				draw_julia(t_frc *frc)
+int				draw_burningship(t_frc *frc)
 {
 	pthread_t	p[THREADS];
-	t_jl_worker	w[THREADS];
+	t_bs_worker	w[THREADS];
 	t_point2d	f;
 	t_point2d	t;
 	int			i;
@@ -60,9 +60,9 @@ int				draw_julia(t_frc *frc)
 	{
 		f = point2d(0, i * T_WIDTH);
 		t = point2d(WIN_WIDTH, (i + 1) * T_WIDTH);
-		w[i] = (t_jl_worker){frc, f, t};
+		w[i] = (t_bs_worker){frc, f, t};
 		pthread_create((p + i), NULL,
-					   (void *(*)(void *))julia_worker, (void *)(w + i));
+					   (void *(*)(void *))burningship_worker, (void *)(w + i));
 	}
 	while (i--)
 		pthread_join(p[i], NULL);
@@ -70,18 +70,15 @@ int				draw_julia(t_frc *frc)
 	return (1);
 }
 
-int			julia_init(t_frc *frc)
+int		burningship_init(t_frc *frc)
 {
-	clear(frc->mlx, &frc->jl.cvs);
-	frc->jl.cvs.c = 0x010505;
-	frc->jl.cvs.i = 300;
-	frc->jl.min = complex(-4, -2);
-	frc->jl.max = complex(4, 2);
-	frc->jl.cvs.min = frc->jl.min;
-	frc->jl.cvs.max = frc->jl.max;
-	frc->jl.cvs.t = point2d(-0.5, 0);
-	frc->jl.p = point2d(528, 408.627);
-	frc->jl.c = complex(-0.7, 0.27015);
-	frc->jl.cvs.draw = (int (*)(void *))draw_julia;
+	frc->cvs = &frc->bs.cvs;
+	clear(frc->mlx, &frc->bs.cvs);
+	frc->bs.cvs.c = 0x000802;
+	frc->bs.cvs.i = 300;
+	frc->bs.cvs.min = complex(-4, -2);
+	frc->bs.cvs.max = complex(4, 2);
+	frc->bs.cvs.t = point2d(-0.5, 0);
+	frc->bs.cvs.draw = (int (*)(void *))draw_burningship;
 	return (1);
 }

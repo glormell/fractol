@@ -44,6 +44,8 @@
 		85714AA622F9C4A800301243 /* draw_julia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_julia.h; sourceTree = "<group>"; };
 		857C611622F8CA08005F0869 /* draw_helpers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_helpers.c; sourceTree = "<group>"; };
 		857C611722F8CA08005F0869 /* draw_helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_helpers.h; sourceTree = "<group>"; };
+		8586355B230177C80006023A /* draw_burningship.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_burningship.c; sourceTree = "<group>"; };
+		8586355C230177C80006023A /* draw_burningship.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_burningship.h; sourceTree = "<group>"; };
 		859547A522F9DA050001E10B /* hook_translate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_translate.c; sourceTree = "<group>"; };
 		859547A622F9DA050001E10B /* hook_translate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_translate.h; sourceTree = "<group>"; };
 		859547A722F9E2B60001E10B /* hook_julia.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_julia.c; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				857C611622F8CA08005F0869 /* draw_helpers.c */,
 				8570E51822E78AC1006DF344 /* draw_mandelbrot.c */,
 				85714AA522F9C4A800301243 /* draw_julia.c */,
+				8586355B230177C80006023A /* draw_burningship.c */,
 			);
 			path = draw;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				857C611722F8CA08005F0869 /* draw_helpers.h */,
 				8570E51922E78AC1006DF344 /* draw_mandelbrot.h */,
 				85714AA622F9C4A800301243 /* draw_julia.h */,
+				8586355C230177C80006023A /* draw_burningship.h */,
 			);
 			path = draw;
 			sourceTree = "<group>";

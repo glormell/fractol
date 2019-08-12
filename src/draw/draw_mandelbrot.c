@@ -69,3 +69,15 @@ int				draw_mandelbrot(t_frc *frc)
 	mlx_put_image_to_window(frc->mlx, frc->win, frc->cvs->img, 0, 0);
 	return (1);
 }
+
+int			mandelbrot_init(t_frc *frc)
+{
+	clear(frc->mlx, &frc->jl.cvs);
+	frc->mb.cvs.c = 0x030306;
+	frc->mb.cvs.i = 300;
+	frc->mb.cvs.min = complex(-4, -2);
+	frc->mb.cvs.max = complex(4, 2);
+	frc->mb.cvs.t = point2d(-0.5, 0);
+	frc->mb.cvs.draw = (int (*)(void *))draw_mandelbrot;
+	return (1);
+}

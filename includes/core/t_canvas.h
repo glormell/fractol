@@ -11,7 +11,7 @@ typedef struct	s_canvas
 	int			i;
 	t_complex	min;
 	t_complex	max;
-	t_point3	t;
+	t_point2d	t;
 	int			(*draw)(void *);
 }				t_canvas;
 

@@ -13,12 +13,14 @@ int				is_shift(int key)
 int				key_press(int key, t_frc *frc)
 {
 	static int	shift = 0;
-	
-  (void)shift;
+
+	(void)shift;
 	if (is_keys_close(key))
 		close_keys_hook(frc);
-  if (is_keys_move(key))
-    move_keys_hook(key, frc);
+	if (is_keys_move(key))
+		move_keys_hook(key, frc);
+	if (key == K_F)
+		random_color(frc);
 	return (0);
 }
 

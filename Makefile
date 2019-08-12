@@ -14,6 +14,7 @@ CFILES = src/core/core.c \
 	src/draw/draw_helpers.c \
 	src/draw/draw_mandelbrot.c \
 	src/draw/draw_julia.c \
+	src/draw/draw_burningship.c \
 	src/hook/hook.c \
 	src/hook/hook_translate.c \
 	src/hook/hook_julia.c \
