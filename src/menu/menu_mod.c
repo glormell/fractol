@@ -1,38 +1,60 @@
 #include "menu/menu_mod.h"
 
-static int	mod_menu_quit(t_frc *frc)
+static int mod_menu_repair(t_frc *frc)
 {
-	frc->mn.q.p = point2(0, 120);
-	frc->mn.q.s = point2(MENU_WIDTH / 2, 40);
-	frc->mn.q.t = "Quit [Q]";
-	frc->mn.q.tp = point2(5, 0);
-	frc->mn.q.tc = 0xffffff;
-	frc->mn.q.h = 0;
-	frc->mn.q.a = 0;
-	frc->mn.q.color = 0xED8179;
-	frc->mn.q.h_color = 0xda5a51;
-	frc->mn.q.a_color = 0xda5a51;
+	frc->mn.rp.p = point2(0, 120);
+	frc->mn.rp.s = point2(MENU_WIDTH / 4, 40);
+	frc->mn.rp.t = "Repair";
+	frc->mn.rp.tp = point2(5, 0);
+	frc->mn.rp.tc = 0xffffff;
+	frc->mn.rp.h = 0;
+	frc->mn.rp.a = 0;
+	frc->mn.rp.d = 0;
+	frc->mn.rp.color = 0x00babc;
+	frc->mn.rp.h_color = 0x008889;
+	frc->mn.rp.a_color = 0x008889;
+	frc->mn.rp.d_color = 0xaaaaaa;
 	return (1);
 }
 
-static int	mod_menu_hide(t_frc *frc)
+static int mod_menu_random(t_frc *frc)
 {
-	frc->mn.h.p = point2(MENU_WIDTH / 2, 120);
-	frc->mn.h.s = point2(MENU_WIDTH / 2, 40);
-	frc->mn.h.t = "Hide [M]";
-	frc->mn.h.tp = point2(5, 0);
-	frc->mn.h.tc = 0xffffff;
-	frc->mn.h.h = 0;
-	frc->mn.h.a = 0;
-	frc->mn.h.color = 0xc0c0c0;
-	frc->mn.h.h_color = 0xaaaaaa;
-	frc->mn.h.a_color = 0xaaaaaa;
+	frc->mn.rd.p = point2(MENU_WIDTH / 4, 120);
+	frc->mn.rd.s = point2(MENU_WIDTH / 4, 40);
+	frc->mn.rd.t = "Rand";
+	frc->mn.rd.tp = point2(5, 0);
+	frc->mn.rd.tc = 0xffffff;
+	frc->mn.rd.h = 0;
+	frc->mn.rd.a = 0;
+	frc->mn.rd.d = 0;
+	frc->mn.rd.color = 0x00babc;
+	frc->mn.rd.h_color = 0x008889;
+	frc->mn.rd.a_color = 0x008889;
+	frc->mn.rd.d_color = 0xaaaaaa;
+	return (1);
+}
+
+static int mod_menu_unlock(t_frc *frc)
+{
+	frc->mn.jk.p = point2(MENU_WIDTH / 2, 120);
+	frc->mn.jk.s = point2(MENU_WIDTH / 2, 40);
+	frc->mn.jk.t = "Unlock";
+	frc->mn.jk.tp = point2(5, 0);
+	frc->mn.jk.tc = 0xffffff;
+	frc->mn.jk.h = 0;
+	frc->mn.jk.a = 0;
+	frc->mn.jk.d = 0;
+	frc->mn.jk.color = 0x00babc;
+	frc->mn.jk.h_color = 0x008889;
+	frc->mn.jk.a_color = 0x008889;
+	frc->mn.jk.d_color = 0xaaaaaa;
 	return (1);
 }
 
 int			mod_menu_init(t_frc *frc)
 {
-	mod_menu_quit(frc);
-	mod_menu_hide(frc);
+	mod_menu_repair(frc);
+	mod_menu_random(frc);
+	mod_menu_unlock(frc);
 	return (1);
 }

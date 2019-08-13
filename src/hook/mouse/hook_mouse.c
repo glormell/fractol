@@ -4,6 +4,8 @@ int				mouse_press(int button, int x, int y, t_frc *frc)
 {
 	if (x <= 0 || y <= 0 || x >= WIN_WIDTH || y >= WIN_HEIGHT)
 		return (0);
+	if (frc->mn.s && is_menu_hook(point2(x, y), frc))
+		return (0);
 	if (is_mouse_zoom(button))
 		zoom_mouse_hook(button, point2d(x, y), frc);
 	else if (button == M_LEFT)
@@ -19,7 +21,8 @@ int				mouse_release(int button, int x, int y, t_frc *frc)
 {
 	if (x <= 0 || y <= 0 || x >= WIN_WIDTH || y >= WIN_HEIGHT)
 		return (0);
-	menu_click_hook(point2(x, y), button, frc);
+	if (frc->mn.s && is_menu_hook(point2(x, y), frc))
+		return(menu_hook(point2(x, y), button == M_LEFT ? 1 : 2, frc));
 	if (button == M_LEFT)
 		frc->ms.l = 0;
 	else if (button == M_MIDDLE)
@@ -32,7 +35,7 @@ int				mouse_release(int button, int x, int y, t_frc *frc)
 int				mouse_move(int x, int y, t_frc *frc)
 {
 	if (frc->mn.s && is_menu_hook(point2(x, y), frc))
-		return (menu_hook(point2(x, y), frc));
+		return (menu_hook(point2(x, y), 0, frc));
 	else
 		clear_menu(frc);
 	if (frc->ms.l)

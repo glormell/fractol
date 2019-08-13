@@ -9,6 +9,8 @@ int    menu_keys_hook(t_frc *frc)
 {
 	if (!(frc->cvs))
 		return (0);
+	if (!frc->mn.s)
+		frc->jl.unlocked = 0;
 	frc->mn.s = !frc->mn.s;
 	frc->cvs->draw(frc);
 	return (0);

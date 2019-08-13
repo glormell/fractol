@@ -10,4 +10,3 @@
 int		main_menu_init(t_frc *frc);
 
 #endif
-

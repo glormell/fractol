@@ -25,7 +25,9 @@ void	draw_button(t_frc *frc, t_menu_button b)
 		p.x = b.p.x + 1;
 		while (p.x < b.p.x + b.s.x)
 		{
-			if (b.a)
+			if (b.d)
+				put_menu_pixel(frc, p, b.d_color);
+			else if (b.a)
 				put_menu_pixel(frc, p, b.h ? b.h_color : b.a_color);
 			else
 				put_menu_pixel(frc, p, b.h ? b.h_color : b.color);
@@ -46,14 +48,20 @@ int		draw_menu(t_frc *frc)
 	draw_button(frc, frc->mn.mb);
 	draw_button(frc, frc->mn.jl);
 	draw_button(frc, frc->mn.bs);
-	draw_button(frc, frc->mn.q);
-	draw_button(frc, frc->mn.h);
+	draw_button(frc, frc->mn.qt);
+	draw_button(frc, frc->mn.hd);
+	draw_button(frc, frc->mn.rp);
+	draw_button(frc, frc->mn.rd);
+	draw_button(frc, frc->mn.jk);
 	mlx_put_image_to_window(frc->mlx, frc->win,
 							frc->mn.img, frc->mn.p.x, frc->mn.p.y);
 	draw_button_text(frc, frc->mn.mb);
 	draw_button_text(frc, frc->mn.jl);
 	draw_button_text(frc, frc->mn.bs);
-	draw_button_text(frc, frc->mn.q);
-	draw_button_text(frc, frc->mn.h);
+	draw_button_text(frc, frc->mn.qt);
+	draw_button_text(frc, frc->mn.hd);
+	draw_button_text(frc, frc->mn.rp);
+	draw_button_text(frc, frc->mn.rd);
+	draw_button_text(frc, frc->mn.jk);
 	return (0);
 }

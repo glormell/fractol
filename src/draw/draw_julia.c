@@ -67,6 +67,10 @@ int				draw_julia(t_frc *frc)
 	while (i--)
 		pthread_join(p[i], 0);
 	mlx_put_image_to_window(frc->mlx, frc->win, frc->cvs->img, 0, 0);
+	frc->mn.rp.d = 0;
+	frc->mn.rd.d = 0;
+	frc->mn.jk.d = 0;
+	frc->mn.hd.d = 0;
 	if (frc->mn.s)
 		frc->mn.draw(frc);
 	return (1);

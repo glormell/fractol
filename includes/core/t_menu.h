@@ -11,9 +11,11 @@ typedef struct		s_menu_button
 	int				tc;
 	int				h;
 	int				a;
+	int				d;
 	int				color;
 	int				h_color;
 	int				a_color;
+	int				d_color;
 }					t_menu_button;
 
 typedef struct		s_menu
@@ -26,9 +28,9 @@ typedef struct		s_menu
 	t_menu_button	bs;
 	t_menu_button	rp;
 	t_menu_button	rd;
-	t_menu_button	jt;
-	t_menu_button	q;
-	t_menu_button	h;
+	t_menu_button	jk;
+	t_menu_button	qt;
+	t_menu_button	hd;
 	int				(*draw)(void *);
 }					t_menu;
 

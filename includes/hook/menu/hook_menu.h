@@ -8,11 +8,10 @@
 # include "hook/codes/mouse_codes.h"
 # include "hook/keys/hook_keys_quit.h"
 # include "hook/keys/hook_keys_menu.h"
-# include "hook/keys/hook_keys_select.h"
+# include "hook/menu/hook_menu_hover.h"
+# include "hook/menu/hook_menu_click.h"
 
-int				is_menu_hook(t_point2 p, t_frc *frc);
-int				clear_menu(t_frc *frc);
-int				menu_hook(t_point2 p, t_frc *frc);
-int				menu_click_hook(t_point2 p, int button, t_frc *frc);
+t_menu_button	*is_menu_hook(t_point2 p, t_frc *frc);
+int				menu_hook(t_point2 p, int a, t_frc *frc);
 
 #endif

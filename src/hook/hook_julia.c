@@ -7,7 +7,9 @@ int		is_toggle_julia_hook(int key)
 
 int		toggle_julia_hook(t_frc *frc)
 {
+	frc->mn.s = 0;
 	frc->jl.unlocked = !frc->jl.unlocked;
+	frc->cvs->draw(frc);
 	return (0);
 }
 

@@ -19,7 +19,10 @@ CFILES = src/core/core.c \
 	src/hook/hook.c \
 	src/hook/hook_translate.c \
 	src/hook/hook_julia.c \
-	src/hook/hook_menu.c \
+	src/hook/menu/hook_menu.c \
+	src/hook/menu/hook_menu_clear.c \
+	src/hook/menu/hook_menu_hover.c \
+	src/hook/menu/hook_menu_click.c \
 	src/hook/keys/hook_keys_quit.c \
 	src/hook/keys/hook_keys_close.c \
 	src/hook/keys/hook_keys_move.c \
