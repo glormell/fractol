@@ -65,6 +65,9 @@
 		85D7836D2302C2B700BAF3A1 /* hook_menu_click.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_menu_click.h; sourceTree = "<group>"; };
 		85D7836F2302C63200BAF3A1 /* hook_menu_clear.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hook_menu_clear.c; sourceTree = "<group>"; };
 		85D783702302C63200BAF3A1 /* hook_menu_clear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hook_menu_clear.h; sourceTree = "<group>"; };
+		85D783712302DD0500BAF3A1 /* draw_tricorn.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_tricorn.c; sourceTree = "<group>"; };
+		85D783722302DD0500BAF3A1 /* draw_tricorn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_tricorn.h; sourceTree = "<group>"; };
+		85D783732302DE3300BAF3A1 /* t_tricorn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_tricorn.h; sourceTree = "<group>"; };
 		85F667D22301BF320053B35A /* draw_menu.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_menu.c; sourceTree = "<group>"; };
 		85F667D32301BF320053B35A /* draw_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = draw_menu.h; sourceTree = "<group>"; };
 		85F667D42301C0270053B35A /* t_menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = t_menu.h; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 				8570E51822E78AC1006DF344 /* draw_mandelbrot.c */,
 				85714AA522F9C4A800301243 /* draw_julia.c */,
 				8586355B230177C80006023A /* draw_burningship.c */,
+				85D783712302DD0500BAF3A1 /* draw_tricorn.c */,
 				85F667D22301BF320053B35A /* draw_menu.c */,
 			);
 			path = draw;
@@ -211,6 +215,7 @@
 				8570E51922E78AC1006DF344 /* draw_mandelbrot.h */,
 				85714AA622F9C4A800301243 /* draw_julia.h */,
 				8586355C230177C80006023A /* draw_burningship.h */,
+				85D783722302DD0500BAF3A1 /* draw_tricorn.h */,
 				85F667D32301BF320053B35A /* draw_menu.h */,
 			);
 			path = draw;
@@ -338,6 +343,7 @@
 				C392109522F7BF0B00A0B0B8 /* t_mandelbrot.h */,
 				85F7BA7D22F9BA60004C9A48 /* t_julia.h */,
 				85B8500223017382007AC11F /* t_burningship.h */,
+				85D783732302DE3300BAF3A1 /* t_tricorn.h */,
 				85F667D42301C0270053B35A /* t_menu.h */,
 				85F667DB2301FB110053B35A /* t_mouse.h */,
 			);

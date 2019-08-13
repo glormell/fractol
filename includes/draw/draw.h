@@ -5,6 +5,7 @@
 # include "draw/draw_mandelbrot.h"
 # include "draw/draw_julia.h"
 # include "draw/draw_burningship.h"
+# include "draw/draw_tricorn.h"
 # include "draw/draw_menu.h"
 # include "menu/menu.h"
 # include "input/input.h"

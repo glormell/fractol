@@ -8,5 +8,7 @@ int		input_init(char *type)
 		return (2);
 	else if ((ft_strcmp(type, "Burningship")) == 0)
 		return (3);
+	else if ((ft_strcmp(type, "Tricorn")) == 0)
+		return (4);
 	return (0);
 }

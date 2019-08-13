@@ -6,6 +6,7 @@
 # include "core/t_mandelbrot.h"
 # include "core/t_julia.h"
 # include "core/t_burningship.h"
+# include "core/t_tricorn.h"
 
 typedef struct		s_frc
 {
@@ -18,6 +19,7 @@ typedef struct		s_frc
 	t_mandelbrot	mb;
 	t_julia			jl;
 	t_burningship	bs;
+	t_tricorn		tc;
 }					t_frc;
 
 #endif

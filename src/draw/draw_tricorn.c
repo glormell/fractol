@@ -1,6 +1,6 @@
-#include "draw/draw_burningship.h"
+#include "draw/draw_tricorn.h"
 
-static void		burningship_iterator(t_frc *frc, t_complex p, t_point2 c)
+static void		tricorn_iterator(t_frc *frc, t_complex p, t_point2 c)
 {
 	t_complex	o;
 	t_complex	n;
@@ -12,8 +12,8 @@ static void		burningship_iterator(t_frc *frc, t_complex p, t_point2 c)
 	while (i < frc->cvs->i && n.r * n.r + n.i * n.i <= 4)
 	{
 		o = n;
-		n = complex(fabs(o.r * o.r - o.i * o.i + p.r),
-					fabs(2 * o.r * o.i) + p.i);
+		n = complex(o.r * o.r - o.i * o.i + p.r,
+					-2 * o.r * o.i + p.i);
 		++i;
 	}
 	if (i == frc->cvs->i)
@@ -22,7 +22,7 @@ static void		burningship_iterator(t_frc *frc, t_complex p, t_point2 c)
 		put_pixel(frc, c, frc->cvs->c * i);
 }
 
-static void		*burningship_worker(t_bs_worker *w)
+static void		*tricorn_worker(t_lp_worker *w)
 {
 	t_complex	p;
 	t_point2	c;
@@ -39,7 +39,7 @@ static void		*burningship_worker(t_bs_worker *w)
 						c.y / (WIN_HEIGHT / (w->frc->cvs->max.i -
 											 w->frc->cvs->min.i)) +
 						w->frc->cvs->min.i + w->frc->cvs->t.y);
-			burningship_iterator(w->frc, p, c);
+			tricorn_iterator(w->frc, p, c);
 			++c.x;
 		}
 		++c.y;
@@ -47,10 +47,10 @@ static void		*burningship_worker(t_bs_worker *w)
 	pthread_exit(0);
 }
 
-int				draw_burningship(t_frc *frc)
+int				draw_tricorn(t_frc *frc)
 {
 	pthread_t	p[THREADS];
-	t_bs_worker	w[THREADS];
+	t_lp_worker	w[THREADS];
 	t_point2d	f;
 	t_point2d	t;
 	int			i;
@@ -60,8 +60,8 @@ int				draw_burningship(t_frc *frc)
 	{
 		f = point2d(0, i * T_WIDTH);
 		t = point2d(WIN_WIDTH, (i + 1) * T_WIDTH);
-		w[i] = (t_bs_worker){frc, f, t};
-		pthread_create((p + i), 0, (void *(*)(void *))burningship_worker,
+		w[i] = (t_lp_worker){frc, f, t};
+		pthread_create((p + i), 0, (void *(*)(void *))tricorn_worker,
 					   (void *)(w + i));
 	}
 	while (i--)
@@ -76,14 +76,14 @@ int				draw_burningship(t_frc *frc)
 	return (1);
 }
 
-int		burningship_init(t_frc *frc)
+int		tricorn_init(t_frc *frc)
 {
-	clear(frc->mlx, &frc->bs.cvs);
-	frc->bs.cvs.c = 0x898900;
-	frc->bs.cvs.i = 300;
-	frc->bs.cvs.min = complex(-4, -2);
-	frc->bs.cvs.max = complex(4, 2);
-	frc->bs.cvs.t = point2d(-0.5, 0);
-	frc->bs.cvs.draw = (int (*)(void *))draw_burningship;
+	clear(frc->mlx, &frc->tc.cvs);
+	frc->tc.cvs.c = 0x000802;
+	frc->tc.cvs.i = 300;
+	frc->tc.cvs.min = complex(-4, -2);
+	frc->tc.cvs.max = complex(4, 2);
+	frc->tc.cvs.t = point2d(-0.5, 0);
+	frc->tc.cvs.draw = (int (*)(void *))draw_tricorn;
 	return (1);
 }
