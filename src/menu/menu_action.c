@@ -6,7 +6,7 @@
 /*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 17:44:15 by glormell          #+#    #+#             */
-/*   Updated: 2019/08/13 17:51:45 by glormell         ###   ########.fr       */
+/*   Updated: 2019/08/13 19:07:35 by glormell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	action_menu_quit(t_frc *frc)
 {
-	frc->mn.qt.p = point2(0, BTN_HEIGHT * 5);
+	frc->mn.qt.p = point2(0, 5 * BTN_HEIGHT);
 	frc->mn.qt.s = point2(MENU_WIDTH / 2, BTN_HEIGHT);
 	frc->mn.qt.t = "Quit";
 	frc->mn.qt.tp = point2(5, 0);
@@ -31,7 +31,7 @@ static int	action_menu_quit(t_frc *frc)
 
 static int	action_menu_hide(t_frc *frc)
 {
-	frc->mn.hd.p = point2(MENU_WIDTH / 2, BTN_HEIGHT * 5);
+	frc->mn.hd.p = point2(MENU_WIDTH / 2, 5 * BTN_HEIGHT);
 	frc->mn.hd.s = point2(MENU_WIDTH / 2, BTN_HEIGHT);
 	frc->mn.hd.t = "Hide";
 	frc->mn.hd.tp = point2(5, 0);
@@ -46,7 +46,7 @@ static int	action_menu_hide(t_frc *frc)
 	return (1);
 }
 
-int		action_menu_init(t_frc *frc)
+int			action_menu_init(t_frc *frc)
 {
 	action_menu_quit(frc);
 	action_menu_hide(frc);

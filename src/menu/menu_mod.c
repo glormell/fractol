@@ -6,15 +6,15 @@
 /*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 17:44:36 by glormell          #+#    #+#             */
-/*   Updated: 2019/08/13 17:44:37 by glormell         ###   ########.fr       */
+/*   Updated: 2019/08/13 19:07:07 by glormell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "menu/menu_mod.h"
 
-static int mod_menu_repair(t_frc *frc)
+static int	mod_menu_repair(t_frc *frc)
 {
-	frc->mn.rp.p = point2(0, BTN_HEIGHT * 4);
+	frc->mn.rp.p = point2(0, 4 * BTN_HEIGHT);
 	frc->mn.rp.s = point2(MENU_WIDTH / 4, BTN_HEIGHT);
 	frc->mn.rp.t = "Repair";
 	frc->mn.rp.tp = point2(5, 0);
@@ -29,9 +29,9 @@ static int mod_menu_repair(t_frc *frc)
 	return (1);
 }
 
-static int mod_menu_random(t_frc *frc)
+static int	mod_menu_random(t_frc *frc)
 {
-	frc->mn.rd.p = point2(MENU_WIDTH / 4, BTN_HEIGHT * 4);
+	frc->mn.rd.p = point2(MENU_WIDTH / 4, 4 * BTN_HEIGHT);
 	frc->mn.rd.s = point2(MENU_WIDTH / 4, BTN_HEIGHT);
 	frc->mn.rd.t = "Rand";
 	frc->mn.rd.tp = point2(5, 0);
@@ -46,7 +46,7 @@ static int mod_menu_random(t_frc *frc)
 	return (1);
 }
 
-static int mod_menu_unlock(t_frc *frc)
+static int	mod_menu_unlock(t_frc *frc)
 {
 	frc->mn.jk.p = point2(MENU_WIDTH / 2, BTN_HEIGHT * 4);
 	frc->mn.jk.s = point2(MENU_WIDTH / 2, BTN_HEIGHT);
