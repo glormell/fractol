@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_mandelbrot.h                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:59:31 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 18:00:51 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DRAW_MANDELBROT_H
 # define DRAW_MANDELBROT_H
 # include <pthread.h>
@@ -15,7 +27,7 @@ typedef struct	s_mb_worker
 	t_point2d	to;
 }				t_mb_worker;
 
-int		draw_mandelbrot(t_frc *frc);
-int		mandelbrot_init(t_frc *frc);
+int				draw_mandelbrot(t_frc *frc);
+int				mandelbrot_init(t_frc *frc);
 
 #endif

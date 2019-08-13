@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_helpers.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:13:17 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:14:54 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "draw/draw_helpers.h"
 
-int	clear(void *mlx, t_canvas *cvs)
+int					clear(void *mlx, t_canvas *cvs)
 {
-	int		*canvas_data;
-	int		bits;
-	int		len;
-	
+	int				*canvas_data;
+	int				bits;
+	int				len;
+
 	if (!(cvs->img))
 		cvs->img = mlx_new_image(mlx, WIN_WIDTH, WIN_HEIGHT);
 	canvas_data = (int *)mlx_get_data_addr(cvs->img, &bits, &len, &len);
@@ -21,7 +33,7 @@ void				put_pixel(t_frc *frc, t_point2 p, int c)
 	int				bits;
 	int				pos;
 	unsigned int	color;
-	
+
 	if (!(frc->cvs->img))
 		frc->cvs->img = mlx_new_image(frc->mlx, WIN_WIDTH, WIN_HEIGHT);
 	canvas_data = mlx_get_data_addr(frc->cvs->img, &bits, &pos, &pos);
@@ -49,6 +61,7 @@ int					select_canvas(t_frc *frc, t_canvas *cvs)
 	frc->mn.mb.a = cvs == &frc->mb.cvs ? 1 : 0;
 	frc->mn.jl.a = cvs == &frc->jl.cvs ? 1 : 0;
 	frc->mn.bs.a = cvs == &frc->bs.cvs ? 1 : 0;
+	frc->mn.tc.a = cvs == &frc->tc.cvs ? 1 : 0;
 	frc->cvs = cvs;
 	return (1);
 }

@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   core.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:01:59 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:02:01 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "core/core.h"
 
 t_frc		*p_frc(void *mlx, int *win_count, char *type)
 {
-	
 	t_frc	*frc;
-	
+
 	if (!(frc = (t_frc *)ft_memalloc(sizeof(t_frc))))
 		return (0);
 	frc->mlx = mlx;
@@ -18,5 +29,4 @@ t_frc		*p_frc(void *mlx, int *win_count, char *type)
 		(!(draw_init(frc, type))))
 		exit(0);
 	return (frc);
-	
 }

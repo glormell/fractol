@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   menu_action.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:44:15 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:51:45 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "menu/menu_action.h"
 
 static int	action_menu_quit(t_frc *frc)
 {
-	frc->mn.qt.p = point2(0, 160);
-	frc->mn.qt.s = point2(MENU_WIDTH / 2, 40);
+	frc->mn.qt.p = point2(0, BTN_HEIGHT * 5);
+	frc->mn.qt.s = point2(MENU_WIDTH / 2, BTN_HEIGHT);
 	frc->mn.qt.t = "Quit";
 	frc->mn.qt.tp = point2(5, 0);
 	frc->mn.qt.tc = 0xffffff;
 	frc->mn.qt.h = 0;
 	frc->mn.qt.a = 0;
 	frc->mn.qt.d = 0;
-	frc->mn.qt.color = 0xED8179;
+	frc->mn.qt.color = 0xed8179;
 	frc->mn.qt.h_color = 0xda5a51;
 	frc->mn.qt.a_color = 0xda5a51;
 	frc->mn.qt.d_color = 0xaaaaaa;
@@ -19,8 +31,8 @@ static int	action_menu_quit(t_frc *frc)
 
 static int	action_menu_hide(t_frc *frc)
 {
-	frc->mn.hd.p = point2(MENU_WIDTH / 2, 160);
-	frc->mn.hd.s = point2(MENU_WIDTH / 2, 40);
+	frc->mn.hd.p = point2(MENU_WIDTH / 2, BTN_HEIGHT * 5);
+	frc->mn.hd.s = point2(MENU_WIDTH / 2, BTN_HEIGHT);
 	frc->mn.hd.t = "Hide";
 	frc->mn.hd.tp = point2(5, 0);
 	frc->mn.hd.tc = 0xffffff;

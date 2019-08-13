@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hook_keys_select.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:36:08 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:36:44 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "hook/keys/hook_keys_select.h"
 
-int    is_select_keys(int key)
+int		is_select_keys(int key)
 {
 	return (key == K_1 || key == K_2 || key == K_3 || key == K_4);
 }
 
-int    select_keys_hook(int key, t_frc *frc)
+int		select_keys_hook(int key, t_frc *frc)
 {
 	if (key == K_1)
 		select_canvas(frc, &frc->mb.cvs);

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_tricorn.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:21:20 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:22:54 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "draw/draw_tricorn.h"
 
 static void		tricorn_iterator(t_frc *frc, t_complex p, t_point2 c)
 {
 	t_complex	o;
 	t_complex	n;
-	int		i;
-	
+	int			i;
+
 	n = complex(0, 0);
 	o = complex(0, 0);
 	i = 0;
@@ -26,7 +38,7 @@ static void		*tricorn_worker(t_lp_worker *w)
 {
 	t_complex	p;
 	t_point2	c;
-	
+
 	c.y = w->from.y;
 	while (c.y < w->to.y)
 	{
@@ -37,7 +49,7 @@ static void		*tricorn_worker(t_lp_worker *w)
 											w->frc->cvs->min.r)) +
 						w->frc->cvs->min.r + w->frc->cvs->t.x,
 						c.y / (WIN_HEIGHT / (w->frc->cvs->max.i -
-											 w->frc->cvs->min.i)) +
+											w->frc->cvs->min.i)) +
 						w->frc->cvs->min.i + w->frc->cvs->t.y);
 			tricorn_iterator(w->frc, p, c);
 			++c.x;
@@ -54,7 +66,7 @@ int				draw_tricorn(t_frc *frc)
 	t_point2d	f;
 	t_point2d	t;
 	int			i;
-	
+
 	i = -1;
 	while (++i < THREADS)
 	{
@@ -62,7 +74,7 @@ int				draw_tricorn(t_frc *frc)
 		t = point2d(WIN_WIDTH, (i + 1) * T_WIDTH);
 		w[i] = (t_lp_worker){frc, f, t};
 		pthread_create((p + i), 0, (void *(*)(void *))tricorn_worker,
-					   (void *)(w + i));
+						(void *)(w + i));
 	}
 	while (i--)
 		pthread_join(p[i], 0);
@@ -76,7 +88,7 @@ int				draw_tricorn(t_frc *frc)
 	return (1);
 }
 
-int		tricorn_init(t_frc *frc)
+int				tricorn_init(t_frc *frc)
 {
 	clear(frc->mlx, &frc->tc.cvs);
 	frc->tc.cvs.c = 0x000802;

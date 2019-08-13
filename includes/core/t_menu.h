@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   t_menu.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:54:24 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:54:26 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef T_MENU_H
 # define T_MENU_H
 # include "core/core_point.h"
@@ -26,6 +38,7 @@ typedef struct		s_menu
 	t_menu_button	mb;
 	t_menu_button	jl;
 	t_menu_button	bs;
+	t_menu_button	tc;
 	t_menu_button	rp;
 	t_menu_button	rd;
 	t_menu_button	jk;

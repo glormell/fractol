@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_julia.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:15:03 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:17:18 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "draw/draw_julia.h"
 
 static void		julia_iterator(t_frc *frc, t_complex p, t_point2 c)
 {
 	t_complex	o;
 	t_complex	n;
-	int		i;
-	
+	int			i;
+
 	n = p;
 	o = complex(0, 0);
 	i = 0;
@@ -26,7 +38,7 @@ static void		*julia_worker(t_jl_worker *w)
 {
 	t_complex	p;
 	t_point2	c;
-	
+
 	c.y = w->from.y;
 	while (c.y < w->to.y)
 	{
@@ -37,7 +49,7 @@ static void		*julia_worker(t_jl_worker *w)
 											w->frc->cvs->min.r)) +
 						w->frc->cvs->min.r + w->frc->cvs->t.x,
 						c.y / (WIN_HEIGHT / (w->frc->cvs->max.i -
-											 w->frc->cvs->min.i)) +
+											w->frc->cvs->min.i)) +
 						w->frc->cvs->min.i + w->frc->cvs->t.y);
 			julia_iterator(w->frc, p, c);
 			++c.x;
@@ -54,7 +66,7 @@ int				draw_julia(t_frc *frc)
 	t_point2d	f;
 	t_point2d	t;
 	int			i;
-	
+
 	i = -1;
 	while (++i < THREADS)
 	{
@@ -62,7 +74,7 @@ int				draw_julia(t_frc *frc)
 		t = point2d(WIN_WIDTH, (i + 1) * T_WIDTH);
 		w[i] = (t_jl_worker){frc, f, t};
 		pthread_create((p + i), 0, (void *(*)(void *))julia_worker,
-					   (void *)(w + i));
+						(void *)(w + i));
 	}
 	while (i--)
 		pthread_join(p[i], 0);

@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_mandelbrot.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:17:57 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:18:54 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "draw/draw_mandelbrot.h"
 
 static void		mandelbrot_iterator(t_frc *frc, t_complex p, t_point2 c)
 {
 	t_complex	o;
 	t_complex	n;
-	int		i;
-	
+	int			i;
+
 	n = complex(0, 0);
 	o = complex(0, 0);
 	i = 0;
@@ -37,7 +49,7 @@ static void		*mandelbrot_worker(t_mb_worker *w)
 											w->frc->cvs->min.r)) +
 						w->frc->cvs->min.r + w->frc->cvs->t.x,
 						c.y / (WIN_HEIGHT / (w->frc->cvs->max.i -
-											 w->frc->cvs->min.i)) +
+											w->frc->cvs->min.i)) +
 						w->frc->cvs->min.i + w->frc->cvs->t.y);
 			mandelbrot_iterator(w->frc, p, c);
 			++c.x;
@@ -62,7 +74,7 @@ int				draw_mandelbrot(t_frc *frc)
 		t = point2d(WIN_WIDTH, (i + 1) * T_WIDTH);
 		w[i] = (t_mb_worker){frc, f, t};
 		pthread_create((p + i), 0, (void *(*)(void *))mandelbrot_worker,
-					   (void *)(w + i));
+						(void *)(w + i));
 	}
 	while (i--)
 		pthread_join(p[i], 0);

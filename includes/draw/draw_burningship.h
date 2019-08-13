@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_burningship.h                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:58:59 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 18:00:12 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DRAW_BURNINGSHIP_H
 # define DRAW_BURNINGSHIP_H
 # include <pthread.h>
@@ -15,7 +27,7 @@ typedef struct	s_bs_worker
 	t_point2d	to;
 }				t_bs_worker;
 
-int		draw_burningship(t_frc *frc);
-int		burningship_init(t_frc *frc);
+int				draw_burningship(t_frc *frc);
+int				burningship_init(t_frc *frc);
 
 #endif

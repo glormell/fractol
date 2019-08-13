@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: glormell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/08/13 17:43:23 by glormell          #+#    #+#             */
+/*   Updated: 2019/08/13 17:43:50 by glormell         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "main.h"
 
-int 		main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
-	
 	void	*mlx;
 	int		win_count;
 	t_frc	*frc[argc == 1 ? 1 : argc - 1];
-	
+
 	win_count = argc == 1 ? 1 : argc - 1;
 	if (!(mlx = mlx_init()))
 		exit(0);
